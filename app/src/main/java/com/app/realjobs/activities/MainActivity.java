@@ -1,8 +1,10 @@
-package com.app.realjobs;
+package com.app.realjobs.activities;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+
+import com.app.realjobs.R;
 
 public class MainActivity extends AppCompatActivity {
 
