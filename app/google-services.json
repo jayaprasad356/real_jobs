@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "936231622591",
+    "project_id": "real-jobs-53638",
+    "storage_bucket": "real-jobs-53638.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:936231622591:android:8fecb266fe48ec20dbb30a",
+        "android_client_info": {
+          "package_name": "com.app.realjobs"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "936231622591-8c9ibi0if3f41881u44m77bnm1of3b56.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBw3bCbn_CZj2wCARoFOJVn3ZCE7veF_nI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "936231622591-8c9ibi0if3f41881u44m77bnm1of3b56.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
