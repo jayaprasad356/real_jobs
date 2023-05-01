@@ -93,18 +93,7 @@ public class Session {
     }
 
 
-    public void logoutUser(Activity activity) {
-        Intent i = new Intent(activity, LoginActivity.class);
-        i.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK);
-        i.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-        activity.startActivity(i);
-        activity.finish();
-        editor.clear();
-        editor.commit();
 
-        new Session(_activity).setBoolean("is_logged_in", false);
-
-    }
 
     public boolean getBoolean(String id) {
         return pref.getBoolean(id, false);

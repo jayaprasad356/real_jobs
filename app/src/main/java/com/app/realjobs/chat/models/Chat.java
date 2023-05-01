@@ -1,7 +1,7 @@
 package com.app.realjobs.chat.models;
 
 
-import static com.app.wfh.chat.constants.IConstants.STARTED;
+import static com.app.realjobs.chat.constants.IConstants.STARTED;
 
 import org.jetbrains.annotations.NotNull;
 

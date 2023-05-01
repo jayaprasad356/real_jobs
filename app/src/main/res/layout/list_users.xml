@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<com.app.abcdapp.chat.views.MaterialRippleLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<com.app.realjobs.chat.views.MaterialRippleLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -186,4 +186,4 @@
             app:civ_border_width="@dimen/padding7" />
     </RelativeLayout>
 
-</com.app.abcdapp.chat.views.MaterialRippleLayout>
+</com.app.realjobs.chat.views.MaterialRippleLayout>

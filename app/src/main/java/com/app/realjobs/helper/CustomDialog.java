@@ -4,7 +4,7 @@ import android.app.Activity;
 import android.app.Dialog;
 import android.view.ViewGroup;
 
-import com.example.myapplication.R;
+import com.app.realjobs.R;
 
 
 public class CustomDialog {

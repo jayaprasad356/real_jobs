@@ -5,25 +5,6 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".activities.MainActivity">
-    <FrameLayout
-        android:id="@+id/Container"
-        android:layout_above="@+id/bottomNavigation"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"/>
-
-    <com.google.android.material.bottomnavigation.BottomNavigationView
-        android:id="@+id/bottomNavigation"
-        android:layout_width="match_parent"
-        android:layout_height="@dimen/_50sdp"
-        android:layout_alignParentBottom="true"
-        app:elevation="@dimen/_7sdp"
-        app:itemIconSize="@dimen/_25sdp"
-        app:itemRippleColor="@color/primaryColor"
-        app:itemTextColor="@color/primaryColor"
-        app:labelVisibilityMode="selected"
-        app:menu="@menu/homescreenmenu"></com.google.android.material.bottomnavigation.BottomNavigationView>
-
-
 
 
 

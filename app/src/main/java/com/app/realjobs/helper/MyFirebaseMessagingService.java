@@ -1,23 +1,22 @@
 package com.app.realjobs.helper;
 
 
-import static com.app.wfh.chat.constants.IConstants.CATEGORY;
-import static com.app.wfh.chat.constants.IConstants.EXTRA_USER_ID;
-import static com.app.wfh.chat.constants.IConstants.NAME;
-import static com.app.wfh.chat.constants.IConstants.TICKET_ID;
-import static com.app.wfh.chat.constants.IConstants.TYPE;
-import static com.app.wfh.helper.Constant.DESCRIPTION;
+import static com.app.realjobs.chat.constants.IConstants.CATEGORY;
+import static com.app.realjobs.chat.constants.IConstants.EXTRA_USER_ID;
+import static com.app.realjobs.chat.constants.IConstants.NAME;
+import static com.app.realjobs.chat.constants.IConstants.TICKET_ID;
+import static com.app.realjobs.chat.constants.IConstants.TYPE;
+import static com.app.realjobs.helper.Constant.DESCRIPTION;
 
 import android.content.Intent;
 import android.util.Log;
 
 import androidx.annotation.NonNull;
 
-import com.app.wfh.activities.MainActivity;
-import com.app.wfh.activities.NotificaionActivity;
-import com.app.wfh.activities.SplashActivity;
-import com.app.wfh.chat.MessageActivity;
-import com.app.wfh.chat.models.Ticket;
+import com.app.realjobs.activities.MainActivity;
+
+import com.app.realjobs.chat.MessageActivity;
+import com.app.realjobs.chat.models.Ticket;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -73,13 +72,13 @@ public class MyFirebaseMessagingService extends FirebaseMessagingService {
                 checkJoining();
             } else {
 
-                if (session.getBoolean("is_logged_in")) {
-                    session.setBoolean(Constant.CHECK_NOTIFICATION, true);
-                    intent = new Intent(getApplicationContext(), NotificaionActivity.class);
-
-                } else {
-                    intent = new Intent(getApplicationContext(), SplashActivity.class);
-                }
+//                if (session.getBoolean("is_logged_in")) {
+//                    session.setBoolean(Constant.CHECK_NOTIFICATION, true);
+//                    intent = new Intent(getApplicationContext(), NotificaionActivity.class);
+//
+//                } else {
+//                    intent = new Intent(getApplicationContext(), SplashActivity.class);
+//                }
             }
 
 

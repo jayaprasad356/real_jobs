@@ -117,7 +117,7 @@ public class RiseTicketActivity extends AppCompatActivity {
 
                         }
                         else {
-                            Toast.makeText(RiseTicketActivity.this, "Please rise ticket only on Working hours Mon - Sat 10 AM to 6 PM", Toast.LENGTH_SHORT).show();
+                            riseTicketCheck();
 
                         }
 
@@ -147,8 +147,10 @@ public class RiseTicketActivity extends AppCompatActivity {
                             session.setBoolean(Constant.RISE_TICKET_STATUS,false);
                             riseTicket();
                         }else {
+                            riseTicket();
+
                             session.setBoolean(Constant.RISE_TICKET_STATUS,true);
-                            Toast.makeText(RiseTicketActivity.this, "Please rise ticket only on Working hours Mon - Sat 10 AM to 6 PM", Toast.LENGTH_SHORT).show();
+                          //  Toast.makeText(RiseTicketActivity.this, "Please rise ticket only on Working hours Mon - Sat 10 AM to 6 PM", Toast.LENGTH_SHORT).show();
 
                         }
 
@@ -270,6 +272,8 @@ public class RiseTicketActivity extends AppCompatActivity {
     }
 
     private void sendTicket() {
+        Toast.makeText(RiseTicketActivity.this, "Ticker sending", Toast.LENGTH_SHORT).show();
+
         Long tsLong = System.currentTimeMillis()/1000;
         RandomId = session.getData(Constant.USER_ID) +"_"+ tsLong.toString();
         reference = FirebaseDatabase.getInstance().getReference(Constant.PENDING_TICKET).child(RandomId);

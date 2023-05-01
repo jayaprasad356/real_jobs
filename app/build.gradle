@@ -65,5 +65,6 @@ dependencies {
     implementation 'com.github.chrisbanes:PhotoView:2.0.0'
     implementation 'com.github.broakenmedia:MultiContactPicker:1.8.5'
     implementation 'com.intuit.sdp:sdp-android:1.0.6'
+    implementation 'com.github.aabhasr1:OtpView:v1.1.2'
 
 }

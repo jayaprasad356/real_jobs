@@ -1,8 +1,8 @@
 package com.app.realjobs.helper;
 
 
-import static com.app.wfh.chat.constants.IConstants.REF_TOKENS;
-import static com.app.wfh.chat.managers.Utils.IS_TRIAL;
+import static com.app.realjobs.chat.constants.IConstants.REF_TOKENS;
+import static com.app.realjobs.chat.managers.Utils.IS_TRIAL;
 
 import android.annotation.SuppressLint;
 import android.text.method.PasswordTransformationMethod;
@@ -10,8 +10,8 @@ import android.util.Log;
 import android.view.MotionEvent;
 import android.widget.EditText;
 
-import com.app.wfh.chat.fcmmodels.Token;
-import com.example.myapplication.R;
+import com.app.realjobs.R;
+import com.app.realjobs.chat.fcmmodels.Token;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DatabaseReference;

@@ -9,7 +9,7 @@ import android.view.WindowManager;
 import android.widget.ProgressBar;
 import android.widget.RelativeLayout;
 
-import com.example.myapplication.R;
+import com.app.realjobs.R;
 
 
 public class ProgressDisplay {

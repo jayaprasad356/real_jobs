@@ -19,7 +19,8 @@ import android.text.Html;
 import androidx.annotation.RequiresApi;
 import androidx.core.app.NotificationCompat;
 
-import com.example.myapplication.R;
+
+import com.app.realjobs.R;
 
 import java.io.IOException;
 import java.io.InputStream;
