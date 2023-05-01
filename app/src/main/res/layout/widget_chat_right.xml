@@ -25,7 +25,7 @@
             android:gravity="center_vertical"
             android:padding="@dimen/padding10"
             android:text="@string/strUsername"
-            android:textColor="@color/colorAccent"
+            android:textColor="@color/white"
             android:textColorLink="@color/colorAccent"
             android:textSize="@dimen/font_fourteen"
             android:visibility="visible" />

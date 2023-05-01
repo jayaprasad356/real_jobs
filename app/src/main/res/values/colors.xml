@@ -14,10 +14,10 @@
     <color name="red">#D32F2F</color>
     <color name="whatsapp_primary_color">#25D366</color>
 
-    <color name="primaryLightColor">#E6ACF1</color>
+    <color name="primaryLightColor">#7F0783</color>
 
-    <color name="primaryDarkColor">#80006F</color>
-    <color name="colorPrimaryDark">#353250</color>
+    <color name="primaryDarkColor">#BE0C84</color>
+    <color name="colorPrimaryDark">#5B1184</color>
 
     <color name="secondaryColor">#ff6d00</color>
 

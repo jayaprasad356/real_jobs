@@ -215,7 +215,7 @@
                 android:layout_centerVertical="true"
                 android:layout_marginEnd="@dimen/padding2"
                 android:background="@drawable/recv_bg_mic"
-                android:backgroundTint="@color/colorPrimaryDark"
+                android:backgroundTint="@color/primaryDarkColor"
                 android:scaleType="centerInside"
                 app:mic_icon="@drawable/recv_ic_mic_white" />
         </RelativeLayout>
