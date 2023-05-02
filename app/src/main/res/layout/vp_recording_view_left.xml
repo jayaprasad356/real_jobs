@@ -77,7 +77,7 @@
                 android:paddingStart="@dimen/padding12"
                 android:paddingEnd="@dimen/padding7" />
 
-            <com.app.abcdapp.chat.voiceplayer.PlayerVisualizerSeekbar
+            <com.app.realjobs.chat.voiceplayer.PlayerVisualizerSeekbar
                 android:id="@+id/seekBarV"
                 android:layout_width="@dimen/padding135"
                 android:layout_height="wrap_content"

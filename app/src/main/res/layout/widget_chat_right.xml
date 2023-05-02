@@ -60,7 +60,7 @@
             android:paddingBottom="@dimen/padding7"
             android:visibility="gone">
 
-            <com.app.abcdapp.chat.voiceplayer.RecordingPlayerView
+            <com.app.realjobs.chat.voiceplayer.RecordingPlayerView
                 android:id="@+id/voicePlayerView"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -93,7 +93,7 @@
             android:padding="@dimen/padding5"
             android:visibility="gone">
 
-            <com.app.abcdapp.chat.audiowave.AudioPlayerView
+            <com.app.realjobs.chat.audiowave.AudioPlayerView
                 android:id="@+id/audioPlayerView"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"

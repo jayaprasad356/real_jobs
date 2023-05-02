@@ -17,7 +17,7 @@
         android:background="@drawable/vp_audio_layout_bg"
         android:gravity="center">
 
-        <com.app.abcdapp.chat.audiowave.AudioWave
+        <com.app.realjobs.chat.audiowave.AudioWave
             android:id="@+id/audioWave"
             android:layout_width="wrap_content"
             android:layout_height="@dimen/padding50"
