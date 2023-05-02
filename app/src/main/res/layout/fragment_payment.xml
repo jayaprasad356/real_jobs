@@ -3,11 +3,18 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".fragment.PaymentFragment">
 
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            >
 
 
         <RelativeLayout
@@ -68,6 +75,199 @@
 
 
         </RelativeLayout>
+
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/_10sdp"
+                >
+
+                <ScrollView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        >
+
+
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="To get Real Work from Home Get Premium Plan"
+                            android:textColor="@color/gray"
+                            android:fontFamily="@font/opensans"
+                            android:textSize="@dimen/_12sdp"
+                            />
+
+                        <TextView
+                            android:layout_marginTop="@dimen/_4sdp"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text=" Rs.499"
+                            android:textColor="@color/primaryColor"
+                            android:fontFamily="@font/opensans"
+                            android:textStyle="bold"
+                            android:textSize="@dimen/_18sdp"
+                            />
+
+
+                        <TextView
+                            android:layout_marginTop="@dimen/_10sdp"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="why should i pay ?\n
+To get Real online jobs\n
+To get 24 hours chat support\n
+To get Proper Guide to earn money\n
+To Alert Fake Jobs and secure You"
+                            android:textColor="@color/gray"
+                            android:fontFamily="@font/opensans"
+                            android:textSize="@dimen/_12sdp"
+                            />
+
+
+                        <ImageView
+                            android:layout_marginTop="@dimen/_10sdp"
+                            android:layout_width="@dimen/_80sdp"
+                            android:layout_height="@dimen/_80sdp"
+                            android:background="@drawable/qrcode"
+                            android:layout_gravity="center"
+                            />
+
+                        <LinearLayout
+                            android:layout_marginTop="@dimen/_10sdp"
+                            android:weightSum="3"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+
+
+
+                            <com.google.android.material.divider.MaterialDivider
+                                android:layout_weight="0.8"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                app:dividerColor="@color/primaryColor"
+                                android:layout_gravity="center"
+                                />
+
+                            <TextView
+                                android:gravity="center"
+                                android:layout_weight="1.4"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="or"
+                                android:textSize="@dimen/_14sdp"
+                                android:textColor="@color/black"
+                                android:fontFamily="@font/opensans"
+                                />
+
+
+                            <com.google.android.material.divider.MaterialDivider
+                                android:layout_weight="0.8"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                app:dividerColor="@color/primaryColor"
+                                android:layout_gravity="center"
+
+                                />
+
+                        </LinearLayout>
+
+
+                        <RelativeLayout
+                            android:layout_marginTop="@dimen/_10sdp"
+                            android:layout_gravity="center"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/corner"
+                            >
+
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="UPI id"
+                                android:fontFamily="@font/opensans"
+                                android:textSize="@dimen/_12sdp"
+                                android:textColor="@color/black"
+                                android:paddingHorizontal="@dimen/_80sdp"
+                                android:paddingVertical="@dimen/_5sdp"
+                                />
+
+                        </RelativeLayout>
+
+
+                        <Button
+                            android:id="@+id/btnUpload"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Upload Screenshot"
+                            android:backgroundTint="@color/yellow"
+                            android:textColor="@color/white"
+                            android:textAllCaps="false"
+                            android:layout_marginTop="@dimen/_10sdp"
+                            android:layout_gravity="center"
+                            />
+
+                        <TextView
+                            android:layout_marginTop="@dimen/_4sdp"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Send screen shot and activate your account"
+                            android:textColor="@color/gray"
+                            android:fontFamily="@font/opensans"
+                            android:textSize="@dimen/_12sdp"
+                            android:gravity="center"
+                            />
+
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:layout_gravity="center"
+                            android:layout_marginTop="@dimen/_4sdp"
+                            >
+
+                            <ImageView
+                                android:layout_width="@dimen/_20sdp"
+                                android:layout_height="@dimen/_20sdp"
+                                android:background="@drawable/whatsapp_ic"
+                                />
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="+91 9222922292"
+                                android:textColor="@color/black"
+                                android:layout_gravity="center"
+                                android:layout_marginLeft="@dimen/_4sdp"
+                                />
+
+
+
+                        </LinearLayout>
+
+
+                    </LinearLayout>
+
+                </ScrollView>
+
+
+
+            </RelativeLayout>
+
+
+        </LinearLayout>
+
+
+
 
 
 

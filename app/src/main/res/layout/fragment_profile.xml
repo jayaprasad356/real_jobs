@@ -3,18 +3,33 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".fragment.ProfileFragment">
 
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="match_parent"
+        android:background="#FFE8E8"
+        >
+
+
+
+
+
+        <RelativeLayout
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_160sdp">
+
+
+
 
 
 
         <RelativeLayout
             android:id="@+id/rl1"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="@dimen/_100sdp"
             android:background="@drawable/bg"
             android:padding="@dimen/_10sdp"
             >
@@ -29,9 +44,283 @@
                 />
 
         </RelativeLayout>
+            <RelativeLayout
+                android:layout_centerHorizontal="true"
+                android:layout_alignParentBottom="true"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+                <com.google.android.material.card.MaterialCardView
+                    android:elevation="0dp"
+                    app:cardCornerRadius="@dimen/_100sdp"
+                    android:layout_width="@dimen/_100sdp"
+                    android:layout_height="@dimen/_100sdp"
+                    android:backgroundTint="@color/white"
+                    >
+
+                    <ImageView
+                        android:layout_gravity="center"
+                        android:layout_width="@dimen/_34sdp"
+                        android:layout_height="@dimen/_38sdp"
+                        android:background="@drawable/person_ic"
+                        />
 
 
 
+                </com.google.android.material.card.MaterialCardView>
+
+
+            </RelativeLayout>
+
+
+
+        </RelativeLayout>
+
+
+
+        <RelativeLayout
+            android:padding="@dimen/_14sdp"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:layout_below="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+
+            <com.google.android.material.card.MaterialCardView
+                android:elevation="0dp"
+                app:cardCornerRadius="@dimen/_10sdp"
+                android:layout_width="match_parent"
+                android:backgroundTint="@color/white"
+                app:cardBackgroundColor="@color/white"
+                android:layout_height="wrap_content">
+
+
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Edit"
+                    android:layout_gravity="right"
+                    android:layout_margin="@dimen/_10sdp"
+                    android:textColor="@color/primaryColor"
+                    android:fontFamily="@font/opensans_semibold"
+
+                    />
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:paddingVertical="@dimen/_30sdp"
+                    android:paddingHorizontal="@dimen/_10sdp"
+
+
+                    >
+
+
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Name"
+                            android:fontFamily="@font/opensans"
+                            android:textSize="@dimen/_12sdp"
+                            />
+
+                        <TextView
+                            android:layout_marginTop="@dimen/_2sdp"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Tamilarasan"
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/_14sdp"
+                            android:fontFamily="@font/opensans"
+                            />
+
+                    </LinearLayout>
+                    <com.google.android.material.divider.MaterialDivider
+                        android:layout_marginVertical="@dimen/_8sdp"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        app:dividerColor="@color/grey_500"/>
+
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Email"
+                            android:fontFamily="@font/opensans"
+                            android:textSize="@dimen/_12sdp"
+                            />
+
+                        <TextView
+                            android:layout_marginTop="@dimen/_2sdp"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="tamil63200@gmail"
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/_14sdp"
+                            android:fontFamily="@font/opensans"
+                            />
+
+                    </LinearLayout>
+                    <com.google.android.material.divider.MaterialDivider
+                        android:layout_marginVertical="@dimen/_8sdp"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        app:dividerColor="@color/grey_500"/>
+
+
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Mobile number"
+                            android:fontFamily="@font/opensans"
+                            android:textSize="@dimen/_12sdp"
+                            />
+
+                        <TextView
+                            android:layout_marginTop="@dimen/_2sdp"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="9965313369"
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/_14sdp"
+                            android:fontFamily="@font/opensans"
+                            />
+
+                    </LinearLayout>
+                    <com.google.android.material.divider.MaterialDivider
+                        android:layout_marginVertical="@dimen/_8sdp"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        app:dividerColor="@color/grey_500"/>
+
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Place"
+                            android:fontFamily="@font/opensans"
+                            android:textSize="@dimen/_12sdp"
+                            />
+
+                        <TextView
+                            android:layout_marginTop="@dimen/_2sdp"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="chennai, India"
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/_14sdp"
+                            android:fontFamily="@font/opensans"
+                            />
+
+                    </LinearLayout>
+                    <com.google.android.material.divider.MaterialDivider
+                        android:layout_marginVertical="@dimen/_8sdp"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        app:dividerColor="@color/grey_500"/>
+
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Skill"
+                            android:fontFamily="@font/opensans"
+                            android:textSize="@dimen/_12sdp"
+                            />
+
+                        <TextView
+                            android:layout_marginTop="@dimen/_2sdp"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="------"
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/_14sdp"
+                            android:fontFamily="@font/opensans"
+                            />
+
+                    </LinearLayout>
+                    <com.google.android.material.divider.MaterialDivider
+                        android:layout_marginVertical="@dimen/_8sdp"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        app:dividerColor="@color/grey_500"/>
+
+
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Working Experience"
+                            android:fontFamily="@font/opensans"
+                            android:textSize="@dimen/_12sdp"
+                            />
+
+                        <TextView
+                            android:layout_marginTop="@dimen/_2sdp"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="------"
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/_14sdp"
+                            android:fontFamily="@font/opensans"
+                            />
+
+                    </LinearLayout>
+                    <com.google.android.material.divider.MaterialDivider
+                        android:layout_marginVertical="@dimen/_8sdp"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        app:dividerColor="@color/grey_500"/>
+
+
+                </LinearLayout>
+
+
+            </com.google.android.material.card.MaterialCardView>
+
+
+        </RelativeLayout>
 
 
 
