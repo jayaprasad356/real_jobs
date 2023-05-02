@@ -114,8 +114,11 @@
                 >
 
                 <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/etMobile"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:inputType="phone"
+
                     android:fontFamily="@font/opensans"
                     />
 
@@ -125,11 +128,14 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="Password"
+                app:endIconMode="password_toggle"
+
                 app:boxStrokeColor="@color/primaryColor"
                 style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                 >
 
                 <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/etPassword"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:fontFamily="@font/opensans"

@@ -3,14 +3,78 @@ package com.app.realjobs.activities;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+import android.util.Patterns;
+import android.view.View;
+import android.widget.Toast;
 
 import com.app.realjobs.R;
+import com.app.realjobs.databinding.ActivityRealJobDetailBinding;
+import com.app.realjobs.databinding.ActivityRegisterBinding;
 
 public class RegisterActivity extends AppCompatActivity {
+    private ActivityRegisterBinding binding;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_register);
+        binding = ActivityRegisterBinding.inflate(getLayoutInflater());
+        setContentView(binding.getRoot());
+        binding.btnCreate.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // Call validateFields() method to validate all fields
+                if (validateFields()) {
+                    Toast.makeText(RegisterActivity.this, "Success", Toast.LENGTH_SHORT).show();
+                    // All fields are valid, continue with data processing
+                }
+            }
+        });
     }
+    private boolean validateFields() {
+        boolean isValid = true;
+        if (binding.etName.getText().toString().isEmpty()) {
+            binding.etName.setError("Name is required");
+            isValid = false;
+        } else {
+            binding.etName.setError(null);
+        }
+        if (binding.etMobile.getText().toString().length() < 10) {
+            binding.etMobile.setError("Mobile number should be minimum 10 digits");
+            isValid = false;
+        } else {
+            binding.etMobile.setError(null);
+        }
+        if (!Patterns.EMAIL_ADDRESS.matcher(binding.etEmail.getText().toString()).matches()) {
+            binding.etEmail.setError("Invalid email address");
+            isValid = false;
+        } else {
+            binding.etEmail.setError(null);
+        }
+        if (binding.etPassword.getText().toString().isEmpty()) {
+            binding.etPassword.setError("Password is required");
+            isValid = false;
+        } else {
+            binding.etPassword.setError(null);
+        }
+        if (binding.etPlaces.getText().toString().isEmpty()) {
+            binding.etPlaces.setError("Place is required");
+            isValid = false;
+        } else {
+            binding.etPlaces.setError(null);
+        }
+        if (binding.etSkills.getText().toString().isEmpty()) {
+            binding.etSkills.setError("Skills are required");
+            isValid = false;
+        } else {
+            binding.etSkills.setError(null);
+        }
+        if (binding.etWorkExperience.getText().toString().isEmpty()) {
+            binding.etWorkExperience.setError("Working experience is required");
+            isValid = false;
+        } else {
+            binding.etWorkExperience.setError(null);
+        }
+        return isValid;
+    }
+
 }

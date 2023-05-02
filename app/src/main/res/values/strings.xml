@@ -79,6 +79,7 @@
     <string name="terms"><u>I have read and agreed to the job details and terms &amp; conditions.</u></string>
     <string name="admob_app_id">ca-app-pub-7994561209093816~7613407342</string>
     <string name="repayment_list">Repayment List</string>
+    <string name="description">Check a website is an easy-to-use online tool which helps you to determine whether a website is likely to be legitimate or a scam … before you visit it. Simply type in the address of the website you want to check, and your results will appear within Quickly.</string>
     <string-array name="my_spinner_values">
         <item>Select Amount</item>
         <item>2000</item>

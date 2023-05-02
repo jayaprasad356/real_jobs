@@ -1,6 +1,7 @@
 package com.app.realjobs.fragment;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
@@ -12,7 +13,10 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Toast;
 
+import com.app.realjobs.activities.CheckFakeJobActivity;
+import com.app.realjobs.activities.RiseTicketActivity;
 import com.app.realjobs.adapter.FakeAdapters;
+import com.app.realjobs.databinding.ActivityCheckFakeJobBinding;
 import com.app.realjobs.databinding.FragmentFakeBinding;
 import com.app.realjobs.helper.ApiConfig;
 import com.app.realjobs.helper.Constant;
@@ -51,6 +55,12 @@ public class FakeFragment extends Fragment {
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(requireContext());
         binding.recyclerView.setLayoutManager(linearLayoutManager);
         fakeList();
+        binding.llCheckFake.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getActivity(), CheckFakeJobActivity.class);
+                startActivity(intent);            }
+        });
 
         return view;
     }

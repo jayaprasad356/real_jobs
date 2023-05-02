@@ -1,15 +1,18 @@
 package com.app.realjobs.adapter;
 
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
+import androidx.activity.result.contract.ActivityResultContracts;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.app.realjobs.R;
+import com.app.realjobs.activities.RealJobDetailActivity;
 import com.app.realjobs.model.Real;
 
 import java.util.ArrayList;
@@ -38,6 +41,13 @@ public class RealAdapters extends RecyclerView.Adapter<RealAdapters.ViewHolder> 
         final Real real = realArrayList.get(i);
         viewHolder.tvDescription.setText(real.getDescription());
         viewHolder.tvAmount.setText("Monthly   income  ₹ "+real.getAmount());
+        viewHolder.itemView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent=new Intent(mContext, RealJobDetailActivity.class);
+                mContext.startActivity(intent);
+            }
+        });
 
     }
 
