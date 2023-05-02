@@ -29,13 +29,13 @@
                     android:id="@+id/ivAd"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginVertical="@dimen/_10sdp"
+                    android:layout_marginTop="@dimen/_25sdp"
                     android:scaleType="fitXY"
                     android:paddingHorizontal="@dimen/_10sdp"
                     android:src="@drawable/fake"/>
                 <ImageView
-                    android:layout_width="@dimen/_40sdp"
-                    android:layout_height="@dimen/_40sdp"
+                    android:layout_width="@dimen/_60sdp"
+                    android:layout_height="@dimen/_60sdp"
                     android:layout_alignParentTop="true"
                     android:layout_alignParentEnd="true"
                     android:layout_marginTop="@dimen/_1sdp"

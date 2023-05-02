@@ -1,5 +1,6 @@
 package com.app.realjobs.fragment;
 
+import android.app.Activity;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
@@ -35,6 +36,7 @@ public class FakeFragment extends Fragment {
     FakeAdapters fakeAdapters;
     Session session;
     FragmentFakeBinding binding;
+    Activity activity;
     public FakeFragment() {
         // Required empty public constructor
     }
@@ -45,6 +47,7 @@ public class FakeFragment extends Fragment {
         // Inflate the layout for this fragment
         binding = FragmentFakeBinding.inflate(inflater, container, false);
         View view = binding.getRoot();
+        activity=getActivity();
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(requireContext());
         binding.recyclerView.setLayoutManager(linearLayoutManager);
         fakeList();
@@ -96,12 +99,13 @@ public class FakeFragment extends Fragment {
                     Toast.makeText(getActivity(), String.valueOf(e), Toast.LENGTH_SHORT).show();
                 }
             }else {
-                ArrayList<Fake> fakeArrayList = new ArrayList<>();
 
-                Fake group = new Fake("Fiewin");
-                fakeArrayList.add(group);
-                fakeAdapters = new FakeAdapters(requireParentFragment().requireActivity(), fakeArrayList);
-                binding.recyclerView.setAdapter(fakeAdapters);
+                    ArrayList<Fake> fakeArrayList = new ArrayList<>();
+                    Fake group = new Fake("Fiewin");
+                    fakeArrayList.add(group);
+                    fakeAdapters = new FakeAdapters(activity, fakeArrayList);
+                    binding.recyclerView.setAdapter(fakeAdapters);
+
             }
         }, requireActivity(), "Constant.CATEGORY_LIST", params, true);
 
