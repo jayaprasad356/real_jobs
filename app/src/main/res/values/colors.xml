@@ -9,23 +9,24 @@
     <color name="white">#FFFFFFFF</color>
 
 
-    <color name="primaryColor">#6B0F81</color>
+    <color name="primaryColor">#BE0C84</color>
     <color name="green">#388E3C</color>
     <color name="red">#D32F2F</color>
     <color name="whatsapp_primary_color">#25D366</color>
 
-    <color name="primaryLightColor">#7F0783</color>
+    <color name="primaryLightColor">#E6ACF1</color>
 
-    <color name="primaryDarkColor">#BE0C84</color>
-    <color name="colorPrimaryDark">#5B1184</color>
+    <color name="primaryDarkColor">#5B1184</color>
+    <color name="colorPrimaryDark">#353250</color>
 
     <color name="secondaryColor">#ff6d00</color>
 
-    <color name="secondaryLightColor">#ff9e40</color>
+    <color name="secondaryLightColor">#FA9D2F</color>
     <color name="secondaryGreenColor">#ffdd40</color>
     <color name="textcolor">#ffdd40</color>
     <color name="yellow">#F9A825</color>
     <color name="navyblue">#80006F</color>
+    <color name="yellow_shade">#FFF2DF</color>
 
     <color name="secondaryDarkColor">#c43c00</color>
 
@@ -54,7 +55,7 @@
     <color name="green_900">#1b5e20</color>
     <color name="red_900">#b71c1c</color>
     <color name="offline">#bfbfbf</color>
-    <color name="greyText">@color/grey_600</color>
+    <color name="greyText">#3F3E3E</color>
     <color name="online">@color/green_500</color>
     <color name="red_500">#f44336</color>
     <color name="black_50">#40000000</color>
