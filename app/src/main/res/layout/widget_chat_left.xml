@@ -433,7 +433,7 @@
             android:layout_height="wrap_content"
             android:fontFamily="@font/roboto_light"
             android:text="@string/staticTime"
-            android:textColor="@color/gray"
+            android:textColor="@color/white"
             android:textSize="@dimen/font_ten" />
 
         <ImageView

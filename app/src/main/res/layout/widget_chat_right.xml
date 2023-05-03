@@ -28,6 +28,7 @@
             android:textColor="@color/white"
             android:textColorLink="@color/colorAccent"
             android:textSize="@dimen/font_fourteen"
+            android:backgroundTint="@color/primaryDarkColor"
             android:visibility="visible" />
 
         <ImageView
@@ -426,7 +427,7 @@
             android:fontFamily="@font/roboto_light"
             android:gravity="end"
             android:text="@string/staticTime"
-            android:textColor="@color/gray"
+            android:textColor="@color/white"
             android:textSize="@dimen/font_ten" />
 
         <ImageView

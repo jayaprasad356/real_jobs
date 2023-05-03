@@ -13,6 +13,7 @@ import android.view.ViewGroup;
 import android.widget.Toast;
 
 import com.app.realjobs.activities.RiseTicketActivity;
+import com.app.realjobs.activities.TicketActivity;
 import com.app.realjobs.databinding.FragmentRealBinding;
 import com.app.realjobs.helper.ApiConfig;
 import com.app.realjobs.helper.Constant;
@@ -55,7 +56,7 @@ FragmentRealBinding binding;
         binding.fabChat.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(getActivity(), RiseTicketActivity.class);
+                Intent intent = new Intent(getActivity(), TicketActivity.class);
                 startActivity(intent);
             }
         });
