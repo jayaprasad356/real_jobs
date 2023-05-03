@@ -19,6 +19,7 @@
         android:text="Reffer Bonus ₹1500 "
         android:textColor="@color/black"
         android:fontFamily="@font/opensans"
+        android:textSize="@dimen/_12sdp"
         android:layout_gravity="center_vertical"/>
 
 

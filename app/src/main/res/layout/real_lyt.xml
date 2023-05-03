@@ -25,8 +25,7 @@
                         android:layout_height="@dimen/_25sdp"
                         android:layout_alignParentEnd="true"
                         android:layout_alignParentTop="true"
-                        android:layout_marginTop="@dimen/_1sdp"
-                        android:src="@drawable/corner_cut" />
+                        android:background="@drawable/corner_cut" />
 
                 </RelativeLayout>
                 <LinearLayout
@@ -47,14 +46,13 @@
                         android:text="ABCD"
                         android:layout_gravity="center_vertical"
                         android:textStyle="bold"
-                        android:textSize="@dimen/_24sdp"
-                        android:layout_marginStart="@dimen/_20sdp"
+                        android:textSize="@dimen/_18sdp"
+                        android:layout_marginStart="@dimen/_4sdp"
                         android:textColor="@color/white"/>
                 </LinearLayout>
                 <TextView
                     android:id="@+id/tvDescription"
                     android:layout_width="wrap_content"
-                    android:paddingTop="@dimen/_6sdp"
                     android:layout_marginBottom="@dimen/_6sdp"
                     android:paddingHorizontal="@dimen/_15sdp"
                     android:text="An employee is working from their house, apartment, or place of residence, rather than working from the office."
@@ -68,7 +66,7 @@
                     android:text="Monthly   income  ₹ 20000"
                     android:layout_height="wrap_content"
                     android:fontFamily="@font/opensans_semibold"
-                    android:textSize="@dimen/_18sdp"
+                    android:textSize="@dimen/_14sdp"
                     android:textColor="@color/secondaryLightColor"/>
 
             </LinearLayout>

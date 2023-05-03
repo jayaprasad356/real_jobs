@@ -37,7 +37,6 @@ public class FakeHistoryAdapters extends RecyclerView.Adapter<FakeHistoryAdapter
     public void onBindViewHolder(@NonNull ViewHolder viewHolder, int i) {
         final FakeHistory fakeHistory = fakeHistories.get(i);
         viewHolder.tvDescription.setText(fakeHistory.getDescription());
-        viewHolder.tvStatus.setText(fakeHistory.getStatus());
         viewHolder.tvTitle.setText(fakeHistory.getTitle());
 
     }
@@ -46,7 +45,7 @@ public class FakeHistoryAdapters extends RecyclerView.Adapter<FakeHistoryAdapter
     public static class ViewHolder extends RecyclerView.ViewHolder {
 
 
-        private final TextView tvDescription,tvTitle,tvStatus;
+        private final TextView tvDescription,tvTitle;
 
 
         public ViewHolder(@NonNull View itemView) {
@@ -54,7 +53,7 @@ public class FakeHistoryAdapters extends RecyclerView.Adapter<FakeHistoryAdapter
 
             tvDescription = itemView.findViewById(R.id.tvDescription);
             tvTitle = itemView.findViewById(R.id.tvTitle);
-            tvStatus = itemView.findViewById(R.id.tvStatus);
+
 
         }
     }

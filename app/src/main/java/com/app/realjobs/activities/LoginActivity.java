@@ -8,6 +8,7 @@ import android.os.Bundle;
 import android.util.Patterns;
 import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.app.realjobs.R;
 import com.app.realjobs.databinding.ActivityLoginBinding;
@@ -54,7 +55,8 @@ public class LoginActivity extends AppCompatActivity {
             binding.etMobile.setError(null);
         }
         if (binding.etPassword.getText().toString().isEmpty()) {
-            binding.etPassword.setError("Password is required");
+           // binding.etPassword.setError("Password is required");
+            Toast.makeText(this, "Password is required", Toast.LENGTH_SHORT).show();
             isValid = false;
         } else {
             binding.etPassword.setError(null);

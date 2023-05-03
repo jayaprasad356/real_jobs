@@ -118,7 +118,8 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:inputType="phone"
-
+                    android:text="6382088746"
+                    android:maxLength="10"
                     android:fontFamily="@font/opensans"
                     />
 
@@ -129,7 +130,6 @@
                 android:layout_height="wrap_content"
                 android:hint="Password"
                 app:endIconMode="password_toggle"
-
                 app:boxStrokeColor="@color/primaryColor"
                 style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                 >
@@ -139,6 +139,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:fontFamily="@font/opensans"
+                    android:text="123445"
                     />
 
             </com.google.android.material.textfield.TextInputLayout>

@@ -12,7 +12,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@drawable/bg"
-        android:padding="@dimen/_10sdp">
+        android:padding="@dimen/_14sdp">
 
         <ImageButton
             android:id="@+id/back"
@@ -47,86 +47,119 @@
         android:textColor="@color/black"
         android:textSize="@dimen/_12sdp" />
 
-    <com.google.android.material.textfield.TextInputLayout
-        style="@style/LoginTextInputLayoutStyle"
+
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="@dimen/_15sdp"
-        android:layout_marginTop="@dimen/_45sdp"
-        android:layout_marginEnd="@dimen/_15sdp"
-        android:hint="Title">
+        android:layout_height="wrap_content">
 
-        <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/etTitle"
-            android:layout_width="match_parent"
-            android:layout_height="@dimen/_40sdp"
-            android:inputType="phone" />
 
-    </com.google.android.material.textfield.TextInputLayout>
-
-    <com.google.android.material.textfield.TextInputLayout
-        style="@style/LoginTextInputLayoutStyle"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="@dimen/_15sdp"
-        android:layout_marginTop="@dimen/_20sdp"
-        android:layout_marginEnd="@dimen/_15sdp"
-        android:hint="Description">
-
-        <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/tt"
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:gravity="top|start"
-            android:inputType="textMultiLine"
-            android:lines="8" />
+            android:orientation="vertical">
 
-    </com.google.android.material.textfield.TextInputLayout>
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="@dimen/_15sdp"
-        android:layout_marginTop="@dimen/_15sdp"
-        android:layout_marginBottom="@dimen/_10sdp"
-        android:fontFamily="@font/opensans"
-        android:text="Upload screenshot" />
+            <com.google.android.material.textfield.TextInputLayout
+                style="@style/LoginTextInputLayoutStyle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_15sdp"
+                android:layout_marginTop="@dimen/_45sdp"
+                android:layout_marginEnd="@dimen/_15sdp"
+                android:hint="Title">
 
-    <androidx.cardview.widget.CardView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="@dimen/_15sdp"
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/etTitle"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_40sdp"
+                    android:inputType="phone" />
 
-        app:cardCornerRadius="@dimen/_10sdp">
+            </com.google.android.material.textfield.TextInputLayout>
 
-        <ImageView
-            android:id="@+id/ivAddImage"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:src="@drawable/add_screenshot" />
-    </androidx.cardview.widget.CardView>
-    <Button
-        android:id="@+id/btnCheck"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Check"
-        android:textColor="@color/white"
-        android:textAllCaps="false"
-        android:layout_gravity="center"
-        android:background="@drawable/button_bg"
-        android:fontFamily="@font/opensans"
-        android:paddingHorizontal="@dimen/_30sdp"
-        android:layout_marginTop="@dimen/_20sdp"
-        />
+            <com.google.android.material.textfield.TextInputLayout
+                style="@style/LoginTextInputLayoutStyle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_15sdp"
+                android:layout_marginTop="@dimen/_20sdp"
+                android:layout_marginEnd="@dimen/_15sdp"
+                android:hint="Description">
 
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginHorizontal="@dimen/_15sdp"
-        android:text="@string/description"
-        android:fontFamily="@font/opensans"
-        android:textColor="@color/black"
-        android:layout_marginTop="@dimen/_25sdp"/>
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/tt"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="top|start"
+                    android:inputType="textMultiLine"
+                    android:lines="8" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_15sdp"
+                android:layout_marginTop="@dimen/_15sdp"
+                android:layout_marginBottom="@dimen/_10sdp"
+                android:fontFamily="@font/opensans"
+                android:text="Upload screenshot" />
+
+            <com.google.android.material.card.MaterialCardView
+                android:layout_marginHorizontal="@dimen/_15sdp"
+                android:id="@+id/cardView"
+                android:layout_width="@dimen/_80sdp"
+                android:layout_height="@dimen/_100sdp"
+                app:cardCornerRadius="@dimen/_4sdp"
+                android:backgroundTint="#DFDEDE"
+                >
+
+
+
+                <ImageButton
+                    android:id="@+id/ibAdd"
+                    android:layout_gravity="center"
+                    android:background="@drawable/ic_baseline_add_24"
+                    android:backgroundTint="@color/white"
+                    android:layout_width="@dimen/_20sdp"
+                    android:layout_height="@dimen/_20sdp"/>
+
+                <ImageView
+                    android:scaleType="fitXY"
+                    android:id="@+id/ivImage"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    />
+
+
+            </com.google.android.material.card.MaterialCardView>
+            <Button
+                android:id="@+id/btnCheck"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Check"
+                android:textColor="@color/white"
+                android:textAllCaps="false"
+                android:layout_gravity="center"
+                android:background="@drawable/button_bg"
+                android:fontFamily="@font/opensans"
+                android:paddingHorizontal="@dimen/_30sdp"
+                android:layout_marginTop="@dimen/_20sdp"
+                />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/_15sdp"
+                android:text="@string/description"
+                android:fontFamily="@font/opensans"
+                android:textColor="@color/black"
+                android:layout_marginTop="@dimen/_25sdp"/>
+
+
+        </LinearLayout>
+
+    </ScrollView>
+
 
 
 
