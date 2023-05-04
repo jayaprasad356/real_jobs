@@ -43,6 +43,7 @@
 
 
     </RelativeLayout>
+
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/fabChat"
         android:layout_width="wrap_content"
@@ -53,5 +54,6 @@
         app:tint="@color/white"
         app:backgroundTint="@color/blue_chat"
         android:layout_height="wrap_content"/>
+
 
 </FrameLayout>

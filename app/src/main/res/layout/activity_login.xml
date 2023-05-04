@@ -118,7 +118,6 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:inputType="phone"
-                    android:text="6382088746"
                     android:maxLength="10"
                     android:fontFamily="@font/opensans"
                     />
@@ -139,7 +138,6 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:fontFamily="@font/opensans"
-                    android:text="123445"
                     />
 
             </com.google.android.material.textfield.TextInputLayout>

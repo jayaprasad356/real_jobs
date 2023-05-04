@@ -11,6 +11,7 @@ import android.widget.FrameLayout;
 
 import com.app.realjobs.R;
 import com.app.realjobs.fragment.FakeFragment;
+import com.app.realjobs.fragment.PaymentFragment;
 import com.app.realjobs.fragment.ProfileFragment;
 import com.app.realjobs.fragment.RealFragment;
 import com.app.realjobs.helper.Session;
@@ -24,6 +25,7 @@ public class HomeActivity extends AppCompatActivity  implements NavigationBarVie
     RealFragment realFragment = new RealFragment();
     FakeFragment fakeFragment = new FakeFragment();
     ProfileFragment profileFragment = new ProfileFragment();
+    PaymentFragment paymentFragment = new PaymentFragment();
 
 
     Activity activity ;
@@ -58,7 +60,8 @@ public class HomeActivity extends AppCompatActivity  implements NavigationBarVie
                 return true;
 
             case R.id.nav_real:
-                getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,realFragment).commit();
+               // getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,paymentFragment ).commit();
+               getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,realFragment).commit();
                 return true;
 
             case R.id.nav_profile:

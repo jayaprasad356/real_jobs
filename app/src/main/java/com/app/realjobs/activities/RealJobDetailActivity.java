@@ -28,6 +28,7 @@ import java.util.Map;
 public class RealJobDetailActivity extends AppCompatActivity {
     private ActivityRealJobDetailBinding binding;
     private ReferBonusAdapters referBonusAdapters;
+    String Title,Description,income,company_name;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -35,6 +36,19 @@ public class RealJobDetailActivity extends AppCompatActivity {
         setContentView(binding.getRoot());
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(this);
         binding.recyclerView.setLayoutManager(linearLayoutManager);
+
+        Title = getIntent().getStringExtra("title");
+        Description = getIntent().getStringExtra("description");
+        income = getIntent().getStringExtra("income");
+        company_name = getIntent().getStringExtra("company_name");
+
+        binding.tvName.setText(Title);
+        binding.tvDescription.setText(Description);
+        binding.tvMonthlyIncome.setText("Monthly   income  ₹ "+income);
+
+
+
+
         fakeHistoryList();
         binding.back.setOnClickListener(new View.OnClickListener() {
             @Override

@@ -93,7 +93,7 @@ public class FakeFragment extends Fragment {
                         }
 
                         //important
-                        fakeAdapters = new FakeAdapters(requireContext(), fakeArrayList);
+                        fakeAdapters = new FakeAdapters(getActivity(), fakeArrayList);
                         binding.recyclerView.setAdapter(fakeAdapters);
 
 
@@ -108,16 +108,8 @@ public class FakeFragment extends Fragment {
                     e.printStackTrace();
                     Toast.makeText(getActivity(), String.valueOf(e), Toast.LENGTH_SHORT).show();
                 }
-            }else {
-
-                    ArrayList<Fake> fakeArrayList = new ArrayList<>();
-                    Fake group = new Fake("Fiewin");
-                    fakeArrayList.add(group);
-                    fakeAdapters = new FakeAdapters(activity, fakeArrayList);
-                    binding.recyclerView.setAdapter(fakeAdapters);
-
             }
-        }, requireActivity(), "Constant.CATEGORY_LIST", params, true);
+        }, requireActivity(), Constant.FAKEJOBSLIST, params, true);
 
 
 

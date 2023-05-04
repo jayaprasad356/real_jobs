@@ -42,6 +42,8 @@ public interface IConstants {
 
     String IMG_DEFAULTS = "default";
 
+
+
     String EXTRA_USER_ID = "userId";
     String TICKET_ID = "ticket_id";
     String RATINGS = "ratings";

@@ -40,11 +40,16 @@ public class RealAdapters extends RecyclerView.Adapter<RealAdapters.ViewHolder> 
     public void onBindViewHolder(@NonNull ViewHolder viewHolder, int i) {
         final Real real = realArrayList.get(i);
         viewHolder.tvDescription.setText(real.getDescription());
-        viewHolder.tvAmount.setText("Monthly   income  ₹ "+real.getAmount());
+        viewHolder.tvName.setText(real.getCompany_name());
+        viewHolder.tvAmount.setText("Monthly   income  ₹ "+real.getIncome());
         viewHolder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent intent=new Intent(mContext, RealJobDetailActivity.class);
+                intent.putExtra("title",real.getTitle());
+                intent.putExtra("description",real.getDescription());
+                intent.putExtra("company_name",real.getCompany_name());
+                intent.putExtra("income",real.getIncome());
                 mContext.startActivity(intent);
             }
         });
@@ -56,7 +61,7 @@ public class RealAdapters extends RecyclerView.Adapter<RealAdapters.ViewHolder> 
 
 
         private final TextView tvDescription;
-        private final TextView tvAmount;
+        private final TextView tvAmount,tvName;
 
 
         public ViewHolder(@NonNull View itemView) {
@@ -65,6 +70,7 @@ public class RealAdapters extends RecyclerView.Adapter<RealAdapters.ViewHolder> 
 
             tvDescription = itemView.findViewById(R.id.tvDescription);
             tvAmount = itemView.findViewById(R.id.tvAmount);
+            tvName = itemView.findViewById(R.id.tvName);
 
         }
     }
