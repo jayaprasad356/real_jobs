@@ -70,6 +70,7 @@ Session session;
         // Inflate the layout for this fragment
         binding = FragmentRealBinding.inflate(inflater, container, false);
         View view = binding.getRoot();
+        session= new Session(requireContext());
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(requireContext());
         binding.recyclerView.setLayoutManager(linearLayoutManager);
         realList();

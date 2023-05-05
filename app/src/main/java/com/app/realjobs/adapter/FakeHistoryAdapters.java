@@ -4,6 +4,7 @@ import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -11,6 +12,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.app.realjobs.R;
 import com.app.realjobs.model.FakeHistory;
+import com.bumptech.glide.Glide;
 
 import java.util.ArrayList;
 
@@ -38,6 +40,8 @@ public class FakeHistoryAdapters extends RecyclerView.Adapter<FakeHistoryAdapter
         final FakeHistory fakeHistory = fakeHistories.get(i);
         viewHolder.tvDescription.setText(fakeHistory.getDescription());
         viewHolder.tvTitle.setText(fakeHistory.getTitle());
+        Glide.with(mContext).load(fakeHistory.getScreenshot()).placeholder(R.drawable.loading_img).into(viewHolder.ivScreenshot);
+
 
     }
 
@@ -46,6 +50,7 @@ public class FakeHistoryAdapters extends RecyclerView.Adapter<FakeHistoryAdapter
 
 
         private final TextView tvDescription,tvTitle;
+        ImageView ivScreenshot;
 
 
         public ViewHolder(@NonNull View itemView) {
@@ -53,6 +58,7 @@ public class FakeHistoryAdapters extends RecyclerView.Adapter<FakeHistoryAdapter
 
             tvDescription = itemView.findViewById(R.id.tvDescription);
             tvTitle = itemView.findViewById(R.id.tvTitle);
+            ivScreenshot=itemView.findViewById(R.id.ivScreenshot);
 
 
         }

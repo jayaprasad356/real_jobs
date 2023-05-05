@@ -8,7 +8,7 @@ import android.content.SharedPreferences;
 
 
 public class Session {
-    public static final String PREFER_NAME = "bigwigg";
+    public static final String PREFER_NAME = "realJob";
     final int PRIVATE_MODE = 0;
     SharedPreferences pref;
     SharedPreferences.Editor editor;

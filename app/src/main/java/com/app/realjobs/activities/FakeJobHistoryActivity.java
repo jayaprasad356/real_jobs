@@ -15,6 +15,8 @@ import com.app.realjobs.databinding.ActivityCheckFakeJobBinding;
 import com.app.realjobs.databinding.ActivityFakeJobHistoryBinding;
 import com.app.realjobs.helper.ApiConfig;
 import com.app.realjobs.helper.Constant;
+import com.app.realjobs.helper.Session;
+
 import com.app.realjobs.model.Fake;
 import com.app.realjobs.model.FakeHistory;
 import com.google.gson.Gson;
@@ -30,12 +32,14 @@ import java.util.Map;
 public class FakeJobHistoryActivity extends AppCompatActivity {
 private ActivityFakeJobHistoryBinding binding;
 private FakeHistoryAdapters fakeHistoryAdapters;
+Session session;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         binding = ActivityFakeJobHistoryBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
+        session=new Session(this);
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(this);
         binding.recyclerView.setLayoutManager(linearLayoutManager);
         fakeHistoryList();
@@ -49,6 +53,7 @@ private FakeHistoryAdapters fakeHistoryAdapters;
     private void fakeHistoryList() {
 
         Map<String, String> params = new HashMap<>();
+        params.put(Constant.USER_ID,session.getData(Constant.USER_ID));
         ApiConfig.RequestToVolley((result, response) -> {
             Log.d("CAT_RES",response);
 
@@ -90,16 +95,8 @@ private FakeHistoryAdapters fakeHistoryAdapters;
                     e.printStackTrace();
                     Toast.makeText(this, String.valueOf(e), Toast.LENGTH_SHORT).show();
                 }
-            }else {
-
-                ArrayList<FakeHistory> fakeArrayList = new ArrayList<>();
-                FakeHistory group = new FakeHistory("Fiewin","Description","success");
-                fakeArrayList.add(group);
-                fakeHistoryAdapters = new FakeHistoryAdapters(this, fakeArrayList);
-                binding.recyclerView.setAdapter(fakeHistoryAdapters);
-
             }
-        }, this, "Constant.CATEGORY_LIST", params, true);
+        }, this, Constant.CHECKFAKELIST, params, true);
 
 
 

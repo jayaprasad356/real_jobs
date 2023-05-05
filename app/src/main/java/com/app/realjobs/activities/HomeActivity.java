@@ -5,9 +5,16 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.FragmentManager;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
+
+import com.app.realjobs.helper.ApiConfig;
+import com.app.realjobs.helper.Constant;
+
+import android.util.Log;
 import android.view.MenuItem;
 import android.widget.FrameLayout;
+import android.widget.Toast;
 
 import com.app.realjobs.R;
 import com.app.realjobs.fragment.FakeFragment;
@@ -18,7 +25,14 @@ import com.app.realjobs.helper.Session;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.navigation.NavigationBarView;
 
-public class HomeActivity extends AppCompatActivity  implements NavigationBarView.OnItemSelectedListener {
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
+
+import java.util.HashMap;
+import java.util.Map;
+
+public class HomeActivity extends AppCompatActivity implements NavigationBarView.OnItemSelectedListener {
 
     FrameLayout fragment_container;
     BottomNavigationView bottomNavigationView;
@@ -28,8 +42,8 @@ public class HomeActivity extends AppCompatActivity  implements NavigationBarVie
     PaymentFragment paymentFragment = new PaymentFragment();
 
 
-    Activity activity ;
-    Session session ;
+    Activity activity;
+    Session session;
     public static FragmentManager fm = null;
 
     @Override
@@ -39,7 +53,6 @@ public class HomeActivity extends AppCompatActivity  implements NavigationBarVie
 
         Activity activity = HomeActivity.this;
         session = new Session(activity);
-
         fm = getSupportFragmentManager();
 
         bottomNavigationView = findViewById(R.id.bottom_navigation);
@@ -49,26 +62,28 @@ public class HomeActivity extends AppCompatActivity  implements NavigationBarVie
         bottomNavigationView.setSelectedItemId(R.id.nav_fake);
 
 
-
     }
 
     @Override
     public boolean onNavigationItemSelected(@NonNull MenuItem item) {
-        switch (item.getItemId()){
+        switch (item.getItemId()) {
             case R.id.nav_fake:
-                getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,fakeFragment).commit();
+                getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, fakeFragment).commit();
                 return true;
 
             case R.id.nav_real:
-               // getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,paymentFragment ).commit();
-               getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,realFragment).commit();
+                if (session.getData(Constant.PAYMENT_STATUS).equals("1"))
+                    getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, realFragment).commit();
+                else
+                    getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, paymentFragment).commit();
                 return true;
 
             case R.id.nav_profile:
-                getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,profileFragment).commit();
+                getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, profileFragment).commit();
                 return true;
 
         }
         return false;
     }
+
 }

@@ -207,7 +207,7 @@
                     <com.google.android.material.divider.MaterialDivider
                         android:id="@+id/divider1"
                         android:layout_width="@dimen/_2sdp"
-                        android:layout_height="@dimen/_170sdp"
+                        android:layout_height="@dimen/_210sdp"
                         android:layout_gravity="center"/>
                     <ImageView
                         android:id="@+id/iv2"
@@ -290,7 +290,13 @@
 
 
 
-
+                        <Button
+                            android:id="@+id/upload_image"
+                            android:layout_width="wrap_content"
+                            android:enabled="false"
+                            android:layout_below="@+id/cardView"
+                            android:text="Upload Image"
+                            android:layout_height="wrap_content"/>
                     </RelativeLayout>
 
 

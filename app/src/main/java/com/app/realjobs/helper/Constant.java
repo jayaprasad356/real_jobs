@@ -25,6 +25,11 @@ public class Constant {
     public static final String FAKEJOBSLIST = BaseUrl + "fakejobslist.php";
     public static final String USER_DETAILS = BaseUrl + "user_details.php";
 
+    public static final String CHECKFAKEJOBS = BaseUrl + "checkfakejobs.php";
+    public static final String CHECKFAKELIST = BaseUrl + "checkfakelist.php";
+    public static final String PAYMENTS = BaseUrl + "payments.php";
+    public static final String PAYMENT_STATUS_URL = BaseUrl + "payment_status.php";
+    public static final String UPDATE_USER_DETAILS = BaseUrl + "update_user_details.php";
 
 
 
@@ -43,6 +48,9 @@ public class Constant {
     public static final String ID = "id";
     public static final String USER_ID = "user_id";
     public static final String MOBILE = "mobile";
+    public static final String IMAGE = "image";
+    public static final String PAYMENT_STATUS = "payment_status";
+
     public static final String TYPE = "type";
     public static final String SUPPORT = "support";
     public static final String TIMESTAMP = "timestamp";
@@ -83,6 +91,7 @@ public class Constant {
 
     public static final String DESCRIPTION = "description";
 
+    public static final String SCREENSHOT = "screenshot";
 
     public static final String DATE = "date";
     public static final String DOB = "dob";

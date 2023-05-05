@@ -1,7 +1,15 @@
 package com.app.realjobs.model;
 
 public class FakeHistory {
-    String title,description,status;
+    String title, description, status, screenshot;
+
+    public String getScreenshot() {
+        return screenshot;
+    }
+
+    public void setScreenshot(String screenshot) {
+        this.screenshot = screenshot;
+    }
 
     public String getTitle() {
         return title;

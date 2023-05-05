@@ -124,7 +124,7 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.app.realjobs.R;
-import com.app.realjobs.activities.MainActivity;
+import com.app.realjobs.activities.HomeActivity;
 import com.app.realjobs.activities.TicketActivity;
 import com.app.realjobs.chat.adapters.MessageAdapters;
 import com.app.realjobs.chat.async.BaseTask;
@@ -1859,7 +1859,7 @@ public class MessageActivity extends BaseActivity implements View.OnClickListene
         if (mainAttachmentLayout.getVisibility() == View.VISIBLE) {
             hideAttachmentView();
         } else {
-            startActivity(new Intent(MessageActivity.this, TicketActivity.class));
+            startActivity(new Intent(MessageActivity.this, HomeActivity.class));
             finish();
         }
     }
