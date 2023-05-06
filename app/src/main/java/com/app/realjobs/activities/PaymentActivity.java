@@ -20,7 +20,7 @@ import com.app.realjobs.databinding.ActivityPaymentBinding;
 import com.app.realjobs.helper.ApiConfig;
 import com.app.realjobs.helper.Constant;
 import com.app.realjobs.helper.Session;
-import com.canhub.cropper.CropImage;
+import com.theartofdev.edmodo.cropper.CropImage;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -119,7 +119,7 @@ public class PaymentActivity extends AppCompatActivity {
                 CropImage.ActivityResult result = CropImage.getActivityResult(data);
                 assert result != null;
 
-                filePath1 = result.getUriFilePath(activity, true);
+                filePath1 = result.getUri().getPath();
 
                 File imgFile = new File(filePath1);
 
