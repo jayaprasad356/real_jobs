@@ -14,6 +14,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.app.realjobs.R;
 import com.app.realjobs.activities.RealJobDetailActivity;
 import com.app.realjobs.model.Real;
+import com.google.gson.Gson;
 
 import java.util.ArrayList;
 
@@ -50,6 +51,10 @@ public class RealAdapters extends RecyclerView.Adapter<RealAdapters.ViewHolder> 
                 intent.putExtra("description",real.getDescription());
                 intent.putExtra("company_name",real.getCompany_name());
                 intent.putExtra("income",real.getIncome());
+                // Convert the list to a JSON string
+                Gson gson = new Gson();
+                String json = gson.toJson(real.getReal_jobs_variant());
+                intent.putExtra("list", json);
                 mContext.startActivity(intent);
             }
         });

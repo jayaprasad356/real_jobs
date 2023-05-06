@@ -10,18 +10,19 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.app.realjobs.R;
-import com.app.realjobs.model.Fake;
+import com.app.realjobs.model.RealJobVariant;
 import com.app.realjobs.model.ReferBonus;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class ReferBonusAdapters extends RecyclerView.Adapter<ReferBonusAdapters.ViewHolder> {
 
     private final Context mContext;
-    private final ArrayList<ReferBonus> fakeList;
+    private final List<RealJobVariant> fakeList;
 
 
-    public ReferBonusAdapters(Context mContext, ArrayList<ReferBonus> fakeArrayList) {
+    public ReferBonusAdapters(Context mContext, List<RealJobVariant> fakeArrayList) {
         this.mContext = mContext;
         this.fakeList = fakeArrayList;
 
@@ -36,8 +37,8 @@ public class ReferBonusAdapters extends RecyclerView.Adapter<ReferBonusAdapters.
 
     @Override
     public void onBindViewHolder(@NonNull ViewHolder viewHolder, int i) {
-        final ReferBonus f = fakeList.get(i);
-        viewHolder.tvReferBonus.setText(f.getBonus());
+        final RealJobVariant f = fakeList.get(i);
+        viewHolder.tvReferBonus.setText(f.getJob_details());
 
     }
 

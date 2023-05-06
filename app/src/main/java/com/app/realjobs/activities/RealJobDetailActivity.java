@@ -13,22 +13,27 @@ import com.app.realjobs.adapter.ReferBonusAdapters;
 import com.app.realjobs.databinding.ActivityRealJobDetailBinding;
 import com.app.realjobs.helper.ApiConfig;
 import com.app.realjobs.helper.Constant;
-import com.app.realjobs.model.FakeHistory;
+import com.app.realjobs.model.RealJobVariant;
 import com.app.realjobs.model.ReferBonus;
 import com.google.gson.Gson;
+import com.google.gson.reflect.TypeToken;
 
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.lang.reflect.Type;
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 public class RealJobDetailActivity extends AppCompatActivity {
     private ActivityRealJobDetailBinding binding;
     private ReferBonusAdapters referBonusAdapters;
-    String Title,Description,income,company_name;
+    String Title, Description, income, company_name;
+    List<RealJobVariant> variants;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -41,12 +46,14 @@ public class RealJobDetailActivity extends AppCompatActivity {
         Description = getIntent().getStringExtra("description");
         income = getIntent().getStringExtra("income");
         company_name = getIntent().getStringExtra("company_name");
-
+        String json = getIntent().getStringExtra("list");
+        Gson gson = new Gson();
+        Type type = new TypeToken<List<RealJobVariant>>() {
+        }.getType();
+        variants = gson.fromJson(json, type);
         binding.tvName.setText(Title);
         binding.tvDescription.setText(Description);
-        binding.tvMonthlyIncome.setText("Monthly   income  ₹ "+income);
-
-
+        binding.tvMonthlyIncome.setText("Monthly   income  ₹ " + income);
 
 
         fakeHistoryList();
@@ -57,68 +64,10 @@ public class RealJobDetailActivity extends AppCompatActivity {
             }
         });
     }
+
     private void fakeHistoryList() {
 
-        Map<String, String> params = new HashMap<>();
-        ApiConfig.RequestToVolley((result, response) -> {
-            Log.d("CAT_RES",response);
-
-            if (result) {
-                try {
-                    JSONObject jsonObject = new JSONObject(response);
-                    if (jsonObject.getBoolean(Constant.SUCCESS)) {
-
-                        Log.d("CAT_RES",response);
-                        JSONObject object = new JSONObject(response);
-                        JSONArray jsonArray = object.getJSONArray(Constant.DATA);
-                        Gson g = new Gson();
-                        ArrayList<ReferBonus> referBonusArrayList = new ArrayList<>();
-
-                        for (int i = 0; i < jsonArray.length(); i++) {
-                            JSONObject jsonObject1 = jsonArray.getJSONObject(i);
-
-                            if (jsonObject1 != null) {
-                                ReferBonus group = g.fromJson(jsonObject1.toString(), ReferBonus.class);
-                                referBonusArrayList.add(group);
-                            } else {
-                                break;
-                            }
-                        }
-
-                        //important
-                        referBonusAdapters = new ReferBonusAdapters(this, referBonusArrayList);
-                        binding.recyclerView.setAdapter(referBonusAdapters);
-
-
-
-
-                    }
-                    else {
-                        Toast.makeText(this, ""+String.valueOf(jsonObject.getString(Constant.MESSAGE)), Toast.LENGTH_SHORT).show();
-                    }
-
-                } catch (JSONException e) {
-                    e.printStackTrace();
-                    Toast.makeText(this, String.valueOf(e), Toast.LENGTH_SHORT).show();
-                }
-            }else {
-
-                ArrayList<ReferBonus> referBonusArrayList = new ArrayList<>();
-                ReferBonus group = new ReferBonus("Reffer Bonus ₹1500 ");
-                ReferBonus groups = new ReferBonus("Reffer Bonus ₹150 ");
-                ReferBonus groupsf = new ReferBonus("Reffer Bonus ₹150 ");
-                referBonusArrayList.add(groupsf);
-                referBonusArrayList.add(group);
-                referBonusArrayList.add(groups);
-
-                referBonusAdapters = new ReferBonusAdapters(this, referBonusArrayList);
-                binding.recyclerView.setAdapter(referBonusAdapters);
-
-            }
-        }, this, "Constant.CATEGORY_LIST", params, true);
-
-
-
-
+        referBonusAdapters = new ReferBonusAdapters(this, variants);
+        binding.recyclerView.setAdapter(referBonusAdapters);
     }
 }
