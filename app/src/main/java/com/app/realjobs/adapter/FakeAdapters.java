@@ -40,7 +40,7 @@ public class FakeAdapters extends RecyclerView.Adapter<FakeAdapters.ViewHolder> 
     public void onBindViewHolder(@NonNull ViewHolder viewHolder, int i) {
         final Fake f = fakeList.get(i);
         viewHolder.tvDescription.setText(f.getTitle());
-        Glide.with(mContext).load(f.getImage()).placeholder(R.drawable.loading_img).into(viewHolder.ivAd);
+        Glide.with(mContext).load(f.getImage()).placeholder(R.drawable.images_loder).into(viewHolder.ivAd);
 
 
     }

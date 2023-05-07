@@ -100,6 +100,7 @@ public class LoginActivity extends AppCompatActivity {
 
                         Intent intent = new Intent(activity,HomeActivity.class);
                         startActivity(intent);
+                        finish();
 
 
                         // showAlertdialog();

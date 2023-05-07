@@ -3,8 +3,10 @@ package com.app.realjobs.activities;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.Activity;
+import android.app.Dialog;
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.Handler;
 import android.util.Log;
 import android.util.Patterns;
 import android.view.View;
@@ -50,6 +52,12 @@ public class RegisterActivity extends AppCompatActivity {
                 }
             }
         });
+        binding.back.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                onBackPressed();
+            }
+        });
     }
 
     private void register() {
@@ -72,7 +80,14 @@ public class RegisterActivity extends AppCompatActivity {
 
                         session.setBoolean("is_logged_in", true);
 
-                        Toast.makeText(this, "" + jsonObject.getString(Constant.MESSAGE), Toast.LENGTH_SHORT).show();
+                        JSONArray userArray = jsonObject.getJSONArray(Constant.DATA);
+
+
+
+                        // Toast.makeText(activity, ""+ userArray.getJSONObject(0).getString(Constant.ID), Toast.LENGTH_SHORT).show();
+
+
+                        session.setData(Constant.USER_ID, userArray.getJSONObject(0).getString(Constant.ID));
                         session.setData(Constant.MOBILE, binding.etMobile.getText().toString().trim());
                         session.setData(Constant.NAME, binding.etName.getText().toString().trim());
                         session.setData(Constant.EMAIL, binding.etEmail.getText().toString().trim());
@@ -80,6 +95,8 @@ public class RegisterActivity extends AppCompatActivity {
                         session.setData(Constant.SKILLS, binding.etSkills.getText().toString().trim());
                         session.setData(Constant.WORKING_EXPERIENCE, binding.etWorkExperience.getText().toString().trim());
                         session.setData(Constant.PASSWORD, binding.etPassword.getText().toString().trim());
+                        showSuccessDialog();
+
 
 
                         // showAlertdialog();
@@ -146,6 +163,25 @@ public class RegisterActivity extends AppCompatActivity {
             binding.etWorkExperience.setError(null);
         }
         return isValid;
+    }
+    private void showSuccessDialog(){
+        // show registration success dialog
+        final Dialog dialog = new Dialog(RegisterActivity.this);
+        dialog.setContentView(R.layout.registration_success_layout);
+        dialog.setCancelable(false);
+        dialog.show();
+
+// delay the transition to HomeActivity
+        new Handler().postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                dialog.dismiss();
+                Intent intent = new Intent(RegisterActivity.this, HomeActivity.class);
+                startActivity(intent);
+                finishAffinity();
+            }
+        }, 2000); // delay in milliseconds (2 seconds)
+
     }
 
 }

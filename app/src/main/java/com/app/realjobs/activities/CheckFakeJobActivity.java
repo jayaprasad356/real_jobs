@@ -11,12 +11,10 @@ import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.Button;
 import android.widget.Toast;
 
 import com.app.realjobs.helper.ApiConfig;
 
-import com.app.realjobs.R;
 import com.app.realjobs.databinding.ActivityCheckFakeJobBinding;
 import com.app.realjobs.helper.Session;
 
@@ -78,7 +76,7 @@ public class CheckFakeJobActivity extends AppCompatActivity {
                 }else if(filePath1.isEmpty()){
                     Toast.makeText(activity, "Please select image", Toast.LENGTH_SHORT).show();
                 }else {
-                    order();
+                    check();
                 }
             }
         });
@@ -86,7 +84,7 @@ public class CheckFakeJobActivity extends AppCompatActivity {
     }
 
     @RequiresApi(api = Build.VERSION_CODES.M)
-    private void order() {
+    private void check() {
 
         Map<String, String> params = new HashMap<>();
         params.put(Constant.TITLE, binding.etTitle.getText().toString());
@@ -103,6 +101,7 @@ public class CheckFakeJobActivity extends AppCompatActivity {
                     if (jsonObject.getBoolean(Constant.SUCCESS)) {
 
                         Toast.makeText(activity, "" + jsonObject.getString(Constant.MESSAGE), Toast.LENGTH_SHORT).show();
+                       onBackPressed();
 
                     }
                 } catch (JSONException e) {
