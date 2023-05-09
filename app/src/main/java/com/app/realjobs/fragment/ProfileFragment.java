@@ -106,6 +106,7 @@ public class ProfileFragment extends Fragment {
                         JSONArray jsonArray = object.getJSONArray(Constant.DATA);
                         Gson g = new Gson();
 
+                        session.setData(Constant.PAYMENT_STATUS,jsonArray.getJSONObject(0).getString(Constant.PAYMENT_STATUS));
 
                         binding.tvName.setText(jsonArray.getJSONObject(0).getString(Constant.NAME));
                         binding.tvMobileNumber.setText(jsonArray.getJSONObject(0).getString(Constant.MOBILE));

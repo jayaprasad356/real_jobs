@@ -24,6 +24,7 @@ import com.app.realjobs.fragment.RealFragment;
 import com.app.realjobs.helper.Session;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.navigation.NavigationBarView;
+import com.google.gson.Gson;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -60,7 +61,7 @@ public class HomeActivity extends AppCompatActivity implements NavigationBarView
 
         fm.beginTransaction().replace(R.id.fragment_container, new FakeFragment()).commit();
         bottomNavigationView.setSelectedItemId(R.id.nav_fake);
-
+profileList();
 
     }
 
@@ -86,4 +87,35 @@ public class HomeActivity extends AppCompatActivity implements NavigationBarView
         return false;
     }
 
+    private void profileList() {
+
+        Map<String, String> params = new HashMap<>();
+        params.put(Constant.USER_ID, session.getData(Constant.USER_ID));
+        ApiConfig.RequestToVolley((result, response) -> {
+            Log.d("CAT_RES", response);
+
+            if (result) {
+                try {
+                    JSONObject jsonObject = new JSONObject(response);
+                    if (jsonObject.getBoolean(Constant.SUCCESS)) {
+
+                        Log.d("CAT_RES", response);
+                        JSONObject object = new JSONObject(response);
+                        JSONArray jsonArray = object.getJSONArray(Constant.DATA);
+                        Gson g = new Gson();
+                        session.setData(Constant.PAYMENT_STATUS,jsonArray.getJSONObject(0).getString(Constant.PAYMENT_STATUS));
+
+                    } else {
+                        Toast.makeText(this, "" + String.valueOf(jsonObject.getString(Constant.MESSAGE)), Toast.LENGTH_SHORT).show();
+                    }
+
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                    Toast.makeText(this, String.valueOf(e), Toast.LENGTH_SHORT).show();
+                }
+            }
+        }, this, Constant.USER_DETAILS, params, true);
+
+
+    }
 }

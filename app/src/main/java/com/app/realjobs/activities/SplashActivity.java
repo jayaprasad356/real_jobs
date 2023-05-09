@@ -6,6 +6,8 @@ import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.pm.PackageInfo;
+import android.content.pm.PackageManager;
 import android.net.Uri;
 import android.os.Bundle;
 import android.os.Handler;
@@ -16,7 +18,6 @@ import com.app.realjobs.R;
 import com.app.realjobs.helper.ApiConfig;
 import com.app.realjobs.helper.Constant;
 import com.app.realjobs.helper.Session;
-import com.google.gson.Gson;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -30,6 +31,7 @@ public class SplashActivity extends AppCompatActivity {
     Handler handler;
     Session session;
     Activity activity;
+    String currentversion = "";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -39,11 +41,18 @@ public class SplashActivity extends AppCompatActivity {
         activity = SplashActivity.this;
         session = new Session(activity);
         handler = new Handler();
-        if (session.getBoolean("is_logged_in")){
-            profileList();
-        }
 
-        GotoActivity();
+
+        try {
+            PackageInfo pInfo = activity.getPackageManager().getPackageInfo(activity.getPackageName(), 0);
+            currentversion = pInfo.versionCode + "";
+        } catch (PackageManager.NameNotFoundException e) {
+            e.printStackTrace();
+        }
+        appupdate();
+
+
+
 
 
     }
@@ -74,10 +83,9 @@ public class SplashActivity extends AppCompatActivity {
         }, 2000);
     }
 
-    private void profileList() {
+    private void appupdate() {
 
         Map<String, String> params = new HashMap<>();
-        params.put(Constant.USER_ID, session.getData(Constant.USER_ID));
         ApiConfig.RequestToVolley((result, response) -> {
             Log.d("CAT_RES", response);
 
@@ -89,8 +97,15 @@ public class SplashActivity extends AppCompatActivity {
                         Log.d("CAT_RES", response);
                         JSONObject object = new JSONObject(response);
                         JSONArray jsonArray = object.getJSONArray(Constant.DATA);
-                        Gson g = new Gson();
-                        session.setData(Constant.PAYMENT_STATUS,jsonArray.getJSONObject(0).getString(Constant.PAYMENT_STATUS));
+                        String latestversion =jsonArray.getJSONObject(0).getString(Constant.VERSION);
+                        String link = jsonArray.getJSONObject(0).getString(Constant.LINK);
+                        if (Integer.parseInt(currentversion) >= Integer.parseInt(latestversion)) {
+                            GotoActivity();
+
+                        } else {
+                            showUpdateDialog(link);
+                        }
+
 
                     } else {
                         Toast.makeText(this, "" + String.valueOf(jsonObject.getString(Constant.MESSAGE)), Toast.LENGTH_SHORT).show();
@@ -101,12 +116,13 @@ public class SplashActivity extends AppCompatActivity {
                     Toast.makeText(this, String.valueOf(e), Toast.LENGTH_SHORT).show();
                 }
             }
-        }, this, Constant.USER_DETAILS, params, true);
+        }, this, Constant.APPUPDATE, params, true);
 
 
     }
+
     // Check if the current version is outdated
-    private void showUpdateDialog() {
+    private void showUpdateDialog(String link) {
 
         // Create an AlertDialog builder
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
@@ -124,7 +140,7 @@ public class SplashActivity extends AppCompatActivity {
             public void onClick(DialogInterface dialog, int which) {
                 // Redirect the user to the Google Play Store or your server's download page
                 // to download the latest version of the app
-                Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse("https://play.google.com/store/apps/details?id=com.example.app"));
+                Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse(link));
                 startActivity(intent);
             }
         });

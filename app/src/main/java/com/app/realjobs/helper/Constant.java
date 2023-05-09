@@ -30,6 +30,7 @@ public class Constant {
     public static final String PAYMENTS = BaseUrl + "payments.php";
     public static final String PAYMENT_STATUS_URL = BaseUrl + "payment_status.php";
     public static final String UPDATE_USER_DETAILS = BaseUrl + "update_user_details.php";
+    public static final String APPUPDATE = BaseUrl + "appupdate.php";
 
 
 
@@ -50,7 +51,8 @@ public class Constant {
     public static final String MOBILE = "mobile";
     public static final String IMAGE = "image";
     public static final String PAYMENT_STATUS = "payment_status";
-
+    public static final String VERSION = "version";
+    public static final String LINK = "link";
     public static final String TYPE = "type";
     public static final String SUPPORT = "support";
     public static final String TIMESTAMP = "timestamp";
