@@ -9,6 +9,7 @@ import static com.app.realjobs.helper.Constant.DESCRIPTION;
 import static com.app.realjobs.helper.Constant.REFERRED_BY;
 
 import android.annotation.SuppressLint;
+import android.content.ClipboardManager;
 import android.content.Intent;
 import android.os.Bundle;
 
@@ -19,6 +20,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.TextView;
 
 import com.app.realjobs.R;
 import com.app.realjobs.activities.PaymentActivity;
@@ -42,6 +44,7 @@ public class PaymentFragment extends Fragment {
     Session session;
     String RandomId;
     DatabaseReference reference;
+    TextView tvUpi;
 
     public PaymentFragment() {
         // Required empty public constructor
@@ -57,6 +60,18 @@ public class PaymentFragment extends Fragment {
         View root = inflater.inflate(R.layout.fragment_payment, container, false);
         session= new Session(requireContext());
         btnUpload = root.findViewById(R.id.btnUpload);
+        tvUpi = root.findViewById(R.id.tvUpi);
+
+        tvUpi.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                // copy to clipboard
+
+                ClipboardManager clipboard = (ClipboardManager) requireContext().getSystemService(requireContext().CLIPBOARD_SERVICE);
+                clipboard.setText("realjobs@upi");
+
+            }
+        });
 
         btnUpload.setOnClickListener(new View.OnClickListener() {
             @Override

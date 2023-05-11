@@ -25,16 +25,16 @@
 
 
             <RelativeLayout
-                android:layout_width="@dimen/_180sdp"
-                android:layout_height="@dimen/_180sdp"
+                android:layout_width="@dimen/_130sdp"
+                android:layout_height="@dimen/_130sdp"
                 android:layout_alignParentRight="true"
                 android:background="@drawable/ellipse1"
                 android:layout_marginBottom="@dimen/_25sdp"
                 >
 
                 <ImageView
-                    android:layout_width="@dimen/_100sdp"
-                    android:layout_height="@dimen/_100sdp"
+                    android:layout_width="@dimen/_60sdp"
+                    android:layout_height="@dimen/_60sdp"
                     android:layout_centerInParent="true"
                     android:background="@drawable/person_img" />
 
@@ -100,7 +100,7 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:text="To get Real Work from Home Get Premium Plan"
-                            android:textColor="@color/gray"
+                            android:textColor="@color/black"
                             android:fontFamily="@font/opensans"
                             android:textSize="@dimen/_12sdp"
                             />
@@ -128,15 +128,14 @@ To get Proper Guide to earn money\n
 To Alert Fake Jobs and secure You"
                             android:textColor="@color/primaryDarkColor"
                             android:fontFamily="@font/opensans_semibold"
-                            android:textStyle="italic"
                             android:textSize="@dimen/_12sdp"
                             />
 
 
                         <ImageView
                             android:layout_marginTop="@dimen/_10sdp"
-                            android:layout_width="@dimen/_80sdp"
-                            android:layout_height="@dimen/_80sdp"
+                            android:layout_width="@dimen/_100sdp"
+                            android:layout_height="@dimen/_100sdp"
                             android:background="@drawable/qrcode"
                             android:layout_gravity="center"
                             />
@@ -191,6 +190,7 @@ To Alert Fake Jobs and secure You"
 
 
                             <TextView
+                                android:id="@+id/tvUpi"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:text="UPI id"
@@ -209,7 +209,7 @@ To Alert Fake Jobs and secure You"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="Upload Screenshot"
-                            android:backgroundTint="@color/yellow"
+                            android:backgroundTint="@color/primaryColor"
                             android:textColor="@color/white"
                             android:textAllCaps="false"
                             android:layout_marginTop="@dimen/_10sdp"

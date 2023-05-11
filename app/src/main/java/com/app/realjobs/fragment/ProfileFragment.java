@@ -12,6 +12,7 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.app.realjobs.R;
@@ -42,6 +43,7 @@ public class ProfileFragment extends Fragment {
     FragmentProfileBinding binding;
     Activity activity;
     Session session;
+    TextView tvEdit;
 
 
     public ProfileFragment() {
@@ -57,16 +59,21 @@ public class ProfileFragment extends Fragment {
 
         activity = getActivity();
         session = new Session(activity);
+
+        tvEdit = view.findViewById(R.id.tvEdit);
+
         binding.fabLogout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 logout();
             }
         });
-        binding.tvEdit.setOnClickListener(new View.OnClickListener() {
+
+
+        tvEdit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(requireActivity(), EditProfileActivity.class);
+                Intent intent = new Intent(getActivity(), EditProfileActivity.class);
                 startActivity(intent);
             }
         });
