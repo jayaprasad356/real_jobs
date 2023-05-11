@@ -58,6 +58,21 @@
                 </LinearLayout>
 
                 <LinearLayout
+                    android:visibility="invisible"
+                    android:id="@+id/btnAttachmentVideo"
+                    style="@style/AttachmentLinearLayout">
+
+                    <ImageView
+                        style="@style/ActualAttachmentLayout"
+                        android:background="@drawable/btn_attach_3"
+                        android:contentDescription="@string/cDescription"
+                        app:srcCompat="@drawable/ic_small_video" />
+
+                    <TextView
+                        style="@style/AttachmentText"
+                        android:text="@string/lblVideo" />
+                </LinearLayout>
+                <LinearLayout
                     android:id="@+id/btnAttachmentGallery"
                     style="@style/AttachmentLinearLayout">
 
@@ -73,20 +88,6 @@
 
                 </LinearLayout>
 
-                <LinearLayout
-                    android:id="@+id/btnAttachmentVideo"
-                    style="@style/AttachmentLinearLayout">
-
-                    <ImageView
-                        style="@style/ActualAttachmentLayout"
-                        android:background="@drawable/btn_attach_3"
-                        android:contentDescription="@string/cDescription"
-                        app:srcCompat="@drawable/ic_small_video" />
-
-                    <TextView
-                        style="@style/AttachmentText"
-                        android:text="@string/lblVideo" />
-                </LinearLayout>
 
             </LinearLayout>
 

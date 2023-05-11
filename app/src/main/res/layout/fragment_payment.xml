@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/colorBlack"
     tools:context=".fragment.PaymentFragment">
 
     <RelativeLayout
@@ -13,75 +14,188 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical"
-            >
-
-
-        <RelativeLayout
-            android:id="@+id/rl1"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="@drawable/bg">
-
-
-            <RelativeLayout
-                android:layout_width="@dimen/_130sdp"
-                android:layout_height="@dimen/_130sdp"
-                android:layout_alignParentRight="true"
-                android:background="@drawable/ellipse1"
-                android:layout_marginBottom="@dimen/_25sdp"
-                >
-
-                <ImageView
-                    android:layout_width="@dimen/_60sdp"
-                    android:layout_height="@dimen/_60sdp"
-                    android:layout_centerInParent="true"
-                    android:background="@drawable/person_img" />
-
-
-            </RelativeLayout>
-
+            android:orientation="vertical">
 
             <LinearLayout
-                android:layout_centerVertical="true"
-                android:gravity="center_vertical"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:padding="@dimen/_10sdp"
-                android:orientation="vertical"
-                >
+                android:orientation="vertical">
+
+
+                <ImageView
+                    android:layout_width="64dp"
+                    android:layout_height="62dp"
+                    android:layout_marginStart="@dimen/_20sdp"
+                    android:layout_marginTop="@dimen/_20sdp"
+                    android:background="@drawable/logo_realjobs" />
 
                 <TextView
-                    android:layout_width="@dimen/_100sdp"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:fontFamily="@font/opensans_semibold"
-                    android:text="Special  Monthly Income"
-                    android:textAlignment="center"
-                    android:lineSpacingExtra="10sp"
+                    android:layout_marginStart="@dimen/_15sdp"
+                    android:fontFamily="@font/porter_sans_inline_block"
+                    android:text="Real Jobs"
                     android:textColor="@color/white"
-                    android:textSize="@dimen/_20sdp" />
+                    android:textSize="@dimen/_12sdp"
+
+                    />
+
 
                 <TextView
-                    android:layout_width="@dimen/_100sdp"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_10sdp"
                     android:fontFamily="@font/opensans_semibold"
-                    android:text="Strategies"
-                    android:textAlignment="center"
-                    android:textColor="@color/yellow"
-                    android:textSize="@dimen/_20sdp" />
+                    android:gravity="center"
+                    android:text="@string/special_month_income"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/_12sdp" />
+
 
             </LinearLayout>
 
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_20sdp"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:text="why should i pay ?"
+                android:textColor="@color/yellow" />
 
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:orientation="horizontal"
+                android:weightSum="10">
 
-        </RelativeLayout>
+                <ImageView
+                    android:layout_width="0dp"
+                    android:layout_height="@dimen/_10sdp"
+                    android:layout_gravity="center_vertical"
+                    android:layout_weight="1.5"
+                    android:src="@drawable/bullet_white" />
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_weight="6.5"
+                    android:text="To get Real Online Jobs"
+                    android:textColor="@color/white" />
+
+                <ImageView
+                    android:layout_width="0dp"
+                    android:layout_height="@dimen/_15sdp"
+                    android:layout_gravity="end"
+                    android:layout_weight="0.5"
+                    android:padding="@dimen/_2sdp"
+                    android:src="@drawable/tick" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:orientation="horizontal"
+                android:weightSum="10">
+
+                <ImageView
+                    android:layout_width="0dp"
+                    android:layout_height="@dimen/_10sdp"
+                    android:layout_gravity="center_vertical"
+                    android:layout_weight="1.5"
+                    android:src="@drawable/bullet_white" />
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_weight="6.5"
+                    android:text="To get 24 Hours Chat Support"
+                    android:textColor="@color/white" />
+
+                <ImageView
+                    android:layout_width="0dp"
+                    android:layout_height="@dimen/_15sdp"
+                    android:layout_gravity="end"
+                    android:layout_weight="0.5"
+                    android:padding="@dimen/_2sdp"
+                    android:src="@drawable/tick" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:orientation="horizontal"
+                android:weightSum="10">
+
+                <ImageView
+                    android:layout_width="0dp"
+                    android:layout_height="@dimen/_10sdp"
+                    android:layout_gravity="center_vertical"
+                    android:layout_weight="1.5"
+                    android:src="@drawable/bullet_white" />
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_weight="6.5"
+                    android:text="To get Proper guidance to earn money"
+                    android:textColor="@color/white" />
+
+                <ImageView
+                    android:layout_width="0dp"
+                    android:layout_height="@dimen/_15sdp"
+                    android:layout_gravity="end"
+                    android:layout_weight="0.5"
+                    android:padding="@dimen/_2sdp"
+                    android:src="@drawable/tick" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:orientation="horizontal"
+                android:weightSum="10">
+
+                <ImageView
+                    android:layout_width="0dp"
+                    android:layout_height="@dimen/_10sdp"
+                    android:layout_gravity="center_vertical"
+                    android:layout_weight="1.5"
+                    android:src="@drawable/bullet_white" />
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_weight="6.5"
+                    android:text="To Alert Fake Jobs and Secure you"
+                    android:textColor="@color/white" />
+
+                <ImageView
+                    android:layout_width="0dp"
+                    android:layout_height="@dimen/_15sdp"
+                    android:layout_gravity="end"
+                    android:layout_weight="0.5"
+                    android:padding="@dimen/_2sdp"
+                    android:src="@drawable/tick" />
+
+            </LinearLayout>
 
 
             <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:padding="@dimen/_10sdp"
-                >
+
+                android:padding="@dimen/_10sdp">
 
                 <ScrollView
                     android:layout_width="match_parent"
@@ -91,149 +205,80 @@
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:orientation="vertical"
-                        >
-
-
-
-                        <TextView
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:text="To get Real Work from Home Get Premium Plan"
-                            android:textColor="@color/black"
-                            android:fontFamily="@font/opensans"
-                            android:textSize="@dimen/_12sdp"
-                            />
-
-                        <TextView
-                            android:layout_marginTop="@dimen/_4sdp"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:text=" Rs.499"
-                            android:textColor="@color/primaryColor"
-                            android:fontFamily="@font/opensans"
-                            android:textStyle="bold"
-                            android:textSize="@dimen/_18sdp"
-                            />
-
-
-                        <TextView
-                            android:layout_marginTop="@dimen/_10sdp"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:text="why should i pay ?\n
-To get Real online jobs\n
-To get 24 hours chat support\n
-To get Proper Guide to earn money\n
-To Alert Fake Jobs and secure You"
-                            android:textColor="@color/primaryDarkColor"
-                            android:fontFamily="@font/opensans_semibold"
-                            android:textSize="@dimen/_12sdp"
-                            />
+                        android:orientation="vertical">
 
 
                         <ImageView
-                            android:layout_marginTop="@dimen/_10sdp"
                             android:layout_width="@dimen/_100sdp"
-                            android:layout_height="@dimen/_100sdp"
-                            android:background="@drawable/qrcode"
+                            android:layout_height="@dimen/_120sdp"
                             android:layout_gravity="center"
-                            />
+                            android:scaleType="fitXY"
+                            android:layout_marginTop="@dimen/_10sdp"
+                            android:background="@drawable/qr" />
 
                         <LinearLayout
-                            android:layout_marginTop="@dimen/_10sdp"
-                            android:weightSum="3"
                             android:layout_width="match_parent"
-                            android:layout_height="wrap_content">
-
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/_10sdp"
+                            android:weightSum="3">
 
 
                             <com.google.android.material.divider.MaterialDivider
-                                android:layout_weight="0.8"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                app:dividerColor="@color/primaryColor"
                                 android:layout_gravity="center"
-                                />
+                                android:layout_weight="0.8"
+                                app:dividerColor="@color/grey" />
 
                             <TextView
-                                android:gravity="center"
-                                android:layout_weight="1.4"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:text="or"
-                                android:textSize="@dimen/_14sdp"
-                                android:textColor="@color/black"
+                                android:layout_weight="1.4"
                                 android:fontFamily="@font/opensans"
-                                />
+                                android:gravity="center"
+                                android:text="or"
+
+                                android:textColor="@color/white"
+                                android:textSize="@dimen/_14sdp" />
 
 
                             <com.google.android.material.divider.MaterialDivider
-                                android:layout_weight="0.8"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                app:dividerColor="@color/primaryColor"
                                 android:layout_gravity="center"
+                                android:layout_weight="0.8"
+                                app:dividerColor="@color/grey"
 
                                 />
 
                         </LinearLayout>
 
 
-                        <RelativeLayout
-                            android:layout_marginTop="@dimen/_10sdp"
-                            android:layout_gravity="center"
+                        <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:background="@drawable/corner"
-                            >
-
-
-                            <TextView
-                                android:id="@+id/tvUpi"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:text="UPI id"
-                                android:fontFamily="@font/opensans"
-                                android:textSize="@dimen/_12sdp"
-                                android:textColor="@color/black"
-                                android:paddingHorizontal="@dimen/_80sdp"
-                                android:paddingVertical="@dimen/_5sdp"
-                                />
-
-                        </RelativeLayout>
-
+                            android:layout_gravity="center"
+                            android:text="BHARATPE00912930379@yesbankltd"
+                            android:textColor="@color/white" />
 
                         <Button
-                            android:id="@+id/btnUpload"
+                            android:id="@+id/btnCopy"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="Upload Screenshot"
-                            android:backgroundTint="@color/primaryColor"
-                            android:textColor="@color/white"
-                            android:textAllCaps="false"
-                            android:layout_marginTop="@dimen/_10sdp"
                             android:layout_gravity="center"
-                            />
-
-                        <TextView
-                            android:layout_marginTop="@dimen/_4sdp"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:text="Send screen shot and activate your account"
-                            android:textColor="@color/gray"
+                            android:backgroundTint="@color/yellow"
+                            android:drawableLeft="@drawable/ic_baseline_content_copy_24"
+                            android:drawableTint="@color/white"
                             android:fontFamily="@font/opensans"
-                            android:textSize="@dimen/_12sdp"
-                            android:gravity="center"
+                            android:text="Copy "
+                            android:textAllCaps="false"
+                            android:textColor="@color/white"
+
                             />
-
-
-
 
                     </LinearLayout>
 
                 </ScrollView>
-
 
 
             </RelativeLayout>
@@ -241,12 +286,70 @@ To Alert Fake Jobs and secure You"
 
         </LinearLayout>
 
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true">
 
+            <TextView
+                android:id="@+id/tvscrenAccount"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_4sdp"
+                android:fontFamily="@font/opensans"
+                android:gravity="center"
+                android:text="Send screen shot and activate your account"
+                android:textColor="@color/gray"
+                android:textSize="@dimen/_12sdp" />
 
+            <TextView
+                android:id="@+id/tvYouPay"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/tvscrenAccount"
+                android:layout_marginStart="@dimen/_15sdp"
+                android:text="You pay"
+                android:textColor="@color/white"
+                android:textSize="@dimen/_12sdp" />
 
+            <TextView
+                android:id="@+id/tvAmount"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/tvYouPay"
+                android:layout_marginStart="@dimen/_15sdp"
+                android:layout_marginTop="@dimen/_4sdp"
+                android:layout_marginBottom="@dimen/_10sdp"
+                android:fontFamily="@font/opensans"
+                android:text="Rs.249"
+                android:textColor="@color/primaryColor"
+                android:textSize="@dimen/_18sdp"
+                android:textStyle="bold" />
 
+            <TextView
+                android:id="@+id/tvPerMonth"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/tvYouPay"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:layout_toRightOf="@+id/tvAmount"
+                android:text="per month"
+                android:layout_marginStart="@dimen/_5sdp"
+                android:textColor="@color/white"
+                android:textSize="@dimen/_10sdp" />
 
-
+            <Button
+                android:id="@+id/btnUpload"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_marginTop="@dimen/_30sdp"
+                android:layout_marginEnd="@dimen/_15sdp"
+                android:backgroundTint="@color/primaryColor"
+                android:text="Upload Screenshot"
+                android:textAllCaps="false"
+                android:textColor="@color/white" />
+        </RelativeLayout>
 
     </RelativeLayout>
 

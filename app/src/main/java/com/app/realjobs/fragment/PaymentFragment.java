@@ -44,7 +44,7 @@ public class PaymentFragment extends Fragment {
     Session session;
     String RandomId;
     DatabaseReference reference;
-    TextView tvUpi;
+    Button tvUpi;
 
     public PaymentFragment() {
         // Required empty public constructor
@@ -60,7 +60,7 @@ public class PaymentFragment extends Fragment {
         View root = inflater.inflate(R.layout.fragment_payment, container, false);
         session= new Session(requireContext());
         btnUpload = root.findViewById(R.id.btnUpload);
-        tvUpi = root.findViewById(R.id.tvUpi);
+        tvUpi = root.findViewById(R.id.btnCopy);
 
         tvUpi.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -68,7 +68,7 @@ public class PaymentFragment extends Fragment {
                 // copy to clipboard
 
                 ClipboardManager clipboard = (ClipboardManager) requireContext().getSystemService(requireContext().CLIPBOARD_SERVICE);
-                clipboard.setText("realjobs@upi");
+                clipboard.setText("BHARATPE00912930379@yesbankltd");
 
             }
         });

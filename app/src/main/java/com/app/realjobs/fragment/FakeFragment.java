@@ -101,7 +101,7 @@ public class FakeFragment extends Fragment {
 
                     }
                     else {
-                        Toast.makeText(getActivity(), ""+String.valueOf(jsonObject.getString(Constant.MESSAGE)), Toast.LENGTH_SHORT).show();
+                       // Toast.makeText(getActivity(), ""+String.valueOf(jsonObject.getString(Constant.MESSAGE)), Toast.LENGTH_SHORT).show();
                     }
 
                 } catch (JSONException e) {
