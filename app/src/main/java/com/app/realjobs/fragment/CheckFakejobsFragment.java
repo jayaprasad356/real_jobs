@@ -1,7 +1,6 @@
-package com.app.realjobs.activities;
+package com.app.realjobs.fragment;
 
-import androidx.annotation.RequiresApi;
-import androidx.appcompat.app.AppCompatActivity;
+import static android.app.Activity.RESULT_OK;
 
 import android.app.Activity;
 import android.content.Intent;
@@ -10,39 +9,61 @@ import android.graphics.BitmapFactory;
 import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
+
+import androidx.annotation.RequiresApi;
+import androidx.fragment.app.Fragment;
+
+import android.util.Log;
+import android.view.LayoutInflater;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.Toast;
 
-import com.app.realjobs.helper.ApiConfig;
-
+import com.app.realjobs.R;
+import com.app.realjobs.activities.FakeJobHistoryActivity;
 import com.app.realjobs.databinding.ActivityCheckFakeJobBinding;
+import com.app.realjobs.databinding.FragmentCheckFakejobsBinding;
+import com.app.realjobs.databinding.FragmentRealBinding;
+import com.app.realjobs.helper.ApiConfig;
+import com.app.realjobs.helper.Constant;
 import com.app.realjobs.helper.Session;
+import com.theartofdev.edmodo.cropper.CropImage;
+import com.theartofdev.edmodo.cropper.CropImageView;
 
 import org.json.JSONException;
 import org.json.JSONObject;
-
-import com.app.realjobs.helper.Constant;
-import com.theartofdev.edmodo.cropper.CropImage;
-
 
 import java.io.File;
 import java.util.HashMap;
 import java.util.Map;
 
-public class CheckFakeJobActivity extends AppCompatActivity {
-    private ActivityCheckFakeJobBinding binding;
+
+public class CheckFakejobsFragment extends Fragment {
+
+   FragmentCheckFakejobsBinding binding;
     Activity activity;
     String filePath1="";
     Uri imageUri;
     Session session;
     private static final int REQUEST_IMAGE_GALLERY = 2;
 
+
+    public CheckFakejobsFragment() {
+        // Required empty public constructor
+    }
+
+
+
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        binding = ActivityCheckFakeJobBinding.inflate(getLayoutInflater());
-        setContentView(binding.getRoot());
-        activity = this;
+    public View onCreateView(LayoutInflater inflater, ViewGroup container,
+                             Bundle savedInstanceState) {
+        // Inflate the layout for this fragment
+        binding = FragmentCheckFakejobsBinding.inflate(inflater, container, false);
+        View view = binding.getRoot();
+
+
+
+        activity = getActivity();
         session = new Session(activity);
         binding.tvHistory.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -55,7 +76,7 @@ public class CheckFakeJobActivity extends AppCompatActivity {
         binding.back.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                onBackPressed();
+                activity.onBackPressed();
             }
         });
         binding.cardView.setOnClickListener(new View.OnClickListener() {
@@ -81,24 +102,23 @@ public class CheckFakeJobActivity extends AppCompatActivity {
             }
         });
 
-    }
-
-    private void pickImageFromGallery() {
-        Intent intent = new Intent();
-        intent.setType("image/*");
-        intent.setAction(Intent.ACTION_GET_CONTENT);
-        startActivityForResult(Intent.createChooser(intent, "Select Picture"), REQUEST_IMAGE_GALLERY);
+        return view;
 
     }
+
 
     @RequiresApi(api = Build.VERSION_CODES.M)
     private void check() {
 
         Map<String, String> params = new HashMap<>();
+        params.put(Constant.USER_ID, session.getData(Constant.USER_ID));
+//        Toast.makeText(activity, ""+session.getData(Constant.USER_ID), Toast.LENGTH_SHORT).show();
         params.put(Constant.TITLE, binding.etTitle.getText().toString());
         params.put(Constant.DESCRIPTION, binding.etDescription.getText().toString());
         Map<String, String> FileParams = new HashMap<>();
         FileParams.put(Constant.SCREENSHOT, filePath1);
+
+        Log.e("nnn", params.toString());
 
 
         ApiConfig.RequestToVolleyMulti((result, response) -> {
@@ -109,12 +129,20 @@ public class CheckFakeJobActivity extends AppCompatActivity {
                     if (jsonObject.getBoolean(Constant.SUCCESS)) {
 
                         Toast.makeText(activity, "" + jsonObject.getString(Constant.MESSAGE), Toast.LENGTH_SHORT).show();
-                       onBackPressed();
+                        Intent intent = new Intent(activity, FakeJobHistoryActivity.class);
+                        startActivity(intent);
 
                     }
+
+                    else {
+                        Toast.makeText(activity, "" + jsonObject.getString(Constant.MESSAGE), Toast.LENGTH_SHORT).show();
+                    }
+
                 } catch (JSONException e) {
                     e.printStackTrace();
                 }
+
+
 
 
             }
@@ -123,9 +151,16 @@ public class CheckFakeJobActivity extends AppCompatActivity {
 
     }
 
+    private void pickImageFromGallery() {
+        Intent intent = new Intent();
+        intent.setType("image/*");
+        intent.setAction(Intent.ACTION_GET_CONTENT);
+        startActivityForResult(Intent.createChooser(intent, "Select Picture"), REQUEST_IMAGE_GALLERY);
+
+    }
 
     @Override
-    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+    public void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
         if (resultCode == RESULT_OK) {
             if (requestCode == REQUEST_IMAGE_GALLERY) {
@@ -137,7 +172,8 @@ public class CheckFakeJobActivity extends AppCompatActivity {
 //                            .setRequestedSize(300, 300)
 //                            .setOutputCompressFormat(Bitmap.CompressFormat.JPEG)
 //                            .setAspectRatio(1, 1)
-                            .start(activity);
+                            .start(getContext(), this);
+
                 }
 
             } else if (requestCode == CropImage.CROP_IMAGE_ACTIVITY_REQUEST_CODE) {
@@ -149,8 +185,8 @@ public class CheckFakeJobActivity extends AppCompatActivity {
                 File imgFile = new File(filePath1);
 
                 if (imgFile.exists()) {
-
                     Bitmap myBitmap = BitmapFactory.decodeFile(imgFile.getAbsolutePath());
+
                     binding.ivImage.setImageBitmap(myBitmap);
                     //order(bookid);
 

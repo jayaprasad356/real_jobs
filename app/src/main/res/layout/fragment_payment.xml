@@ -218,7 +218,7 @@
 
                         <LinearLayout
                             android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
+                            android:layout_height="27dp"
                             android:layout_marginTop="@dimen/_10sdp"
                             android:weightSum="3">
 
@@ -255,10 +255,11 @@
 
 
                         <TextView
+                            android:id="@+id/tvUpiid"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_gravity="center"
-                            android:text="BHARATPE00912930379@yesbankltd"
+                            android:text=""
                             android:textColor="@color/white" />
 
                         <Button
@@ -321,7 +322,7 @@
                 android:layout_marginTop="@dimen/_4sdp"
                 android:layout_marginBottom="@dimen/_10sdp"
                 android:fontFamily="@font/opensans"
-                android:text="Rs.249"
+                android:text=""
                 android:textColor="@color/primaryColor"
                 android:textSize="@dimen/_18sdp"
                 android:textStyle="bold" />

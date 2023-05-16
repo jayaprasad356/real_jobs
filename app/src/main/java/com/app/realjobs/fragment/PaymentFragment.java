@@ -16,16 +16,19 @@ import android.os.Bundle;
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.app.realjobs.R;
 import com.app.realjobs.activities.PaymentActivity;
 import com.app.realjobs.chat.MessageActivity;
 import com.app.realjobs.chat.models.Ticket;
+import com.app.realjobs.helper.ApiConfig;
 import com.app.realjobs.helper.Constant;
 import com.app.realjobs.helper.Session;
 import com.google.firebase.database.DataSnapshot;
@@ -33,8 +36,14 @@ import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
+import com.google.gson.Gson;
+
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
 
 import java.util.HashMap;
+import java.util.Map;
 
 
 public class PaymentFragment extends Fragment {
@@ -45,6 +54,7 @@ public class PaymentFragment extends Fragment {
     String RandomId;
     DatabaseReference reference;
     Button tvUpi;
+    TextView tvUpiid,tvAmount;
 
     public PaymentFragment() {
         // Required empty public constructor
@@ -61,14 +71,20 @@ public class PaymentFragment extends Fragment {
         session= new Session(requireContext());
         btnUpload = root.findViewById(R.id.btnUpload);
         tvUpi = root.findViewById(R.id.btnCopy);
+        tvUpiid = root.findViewById(R.id.tvUpiid);
+        tvAmount = root.findViewById(R.id.tvAmount);
+
+
+        apicalldetails();
+
 
         tvUpi.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 // copy to clipboard
-
                 ClipboardManager clipboard = (ClipboardManager) requireContext().getSystemService(requireContext().CLIPBOARD_SERVICE);
-                clipboard.setText("BHARATPE00912930379@yesbankltd");
+                clipboard.setText(tvUpiid.getText().toString().trim());
+                Toast.makeText(requireContext(), "Copied to clipboard ", Toast.LENGTH_SHORT).show();
 
             }
         });
@@ -86,6 +102,49 @@ public class PaymentFragment extends Fragment {
 
         return root;
     }
+
+    private void apicalldetails() {
+
+        Map<String, String> params = new HashMap<>();
+        params.put(Constant.USER_ID, session.getData(Constant.USER_ID));
+        ApiConfig.RequestToVolley((result, response) -> {
+            Log.d("CAT_RES", response);
+
+            if (result) {
+                try {
+                    JSONObject jsonObject = new JSONObject(response);
+                    if (jsonObject.getBoolean(Constant.SUCCESS)) {
+
+                        Log.d("CAT_RES", response);
+                        JSONObject object = new JSONObject(response);
+                        JSONArray jsonArray = object.getJSONArray(Constant.DATA);
+                        Gson g = new Gson();
+
+
+
+                        tvUpiid.setText(jsonArray.getJSONObject(0).getString("upi_id"));
+                        String amount = (jsonArray.getJSONObject(0).getString("price"));
+
+                        tvAmount.setText("₹ "+amount);
+
+
+
+                    } else {
+                        Toast.makeText(getActivity(), "" + String.valueOf(jsonObject.getString(Constant.MESSAGE)), Toast.LENGTH_SHORT).show();
+                    }
+
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                    Toast.makeText(getActivity(), String.valueOf(e), Toast.LENGTH_SHORT).show();
+                }
+            }
+        }, requireActivity(), Constant.SETTINGS, params, true);
+
+
+
+
+    }
+
     private void checkJoining() {
         //DatabaseReference ref = FirebaseDatabase.getInstance().getReference(Constant.JOINING_TICKET).child(session.getData(Constant.MOBILE));
         FirebaseDatabase.getInstance()

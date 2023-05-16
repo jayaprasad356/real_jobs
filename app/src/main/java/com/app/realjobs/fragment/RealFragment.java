@@ -87,6 +87,7 @@ Session session;
     private void realList() {
 
         Map<String, String> params = new HashMap<>();
+        params.put(Constant.USER_ID, session.getData(Constant.USER_ID));
         ApiConfig.RequestToVolley((result, response) -> {
             Log.d("CAT_RES",response);
 
@@ -100,6 +101,7 @@ Session session;
                         JSONArray jsonArray = object.getJSONArray(Constant.DATA);
                         Gson g = new Gson();
                         ArrayList<Real> realArrayList = new ArrayList<>();
+
 
                         for (int i = 0; i < jsonArray.length(); i++) {
                             JSONObject jsonObject1 = jsonArray.getJSONObject(i);

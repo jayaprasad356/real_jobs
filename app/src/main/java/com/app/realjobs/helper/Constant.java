@@ -24,13 +24,16 @@ public class Constant {
     public static final String REGISTER_URL = BaseUrl + "register.php";
     public static final String FAKEJOBSLIST = BaseUrl + "fakejobslist.php";
     public static final String USER_DETAILS = BaseUrl + "user_details.php";
-
     public static final String CHECKFAKEJOBS = BaseUrl + "checkfakejobs.php";
     public static final String CHECKFAKELIST = BaseUrl + "checkfakelist.php";
     public static final String PAYMENTS = BaseUrl + "payments.php";
     public static final String PAYMENT_STATUS_URL = BaseUrl + "payment_status.php";
     public static final String UPDATE_USER_DETAILS = BaseUrl + "update_user_details.php";
     public static final String APPUPDATE = BaseUrl + "appupdate.php";
+    public static final String SETTINGS = BaseUrl + "settings.php";
+
+
+    public static final String MAIN_CONTENT = "main_content";
 
 
 

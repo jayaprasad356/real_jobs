@@ -38,9 +38,25 @@ public class FakeHistoryAdapters extends RecyclerView.Adapter<FakeHistoryAdapter
     @Override
     public void onBindViewHolder(@NonNull ViewHolder viewHolder, int i) {
         final FakeHistory fakeHistory = fakeHistories.get(i);
+
+        if (fakeHistory.getStatus().equals("0")){
+            viewHolder.tvPending.setVisibility(View.VISIBLE);
+            viewHolder.tvFake.setVisibility(View.GONE);
+            viewHolder.tvReal.setVisibility(View.GONE);
+        }else if (fakeHistory.getStatus().equals("1")){
+            viewHolder.tvPending.setVisibility(View.GONE);
+            viewHolder.tvFake.setVisibility(View.VISIBLE);
+            viewHolder.tvReal.setVisibility(View.GONE);
+        }
+        else if (fakeHistory.getStatus().equals("2")){
+            viewHolder.tvPending.setVisibility(View.GONE);
+            viewHolder.tvFake.setVisibility(View.GONE);
+            viewHolder.tvReal.setVisibility(View.VISIBLE);
+        }
+
         viewHolder.tvDescription.setText(fakeHistory.getDescription());
         viewHolder.tvTitle.setText(fakeHistory.getTitle());
-        Glide.with(mContext).load(fakeHistory.getScreenshot()).placeholder(R.drawable.loading_img).into(viewHolder.ivScreenshot);
+        Glide.with(mContext).load(fakeHistory.getScreenshot()).into(viewHolder.ivScreenshot);
 
 
     }
@@ -49,7 +65,7 @@ public class FakeHistoryAdapters extends RecyclerView.Adapter<FakeHistoryAdapter
     public static class ViewHolder extends RecyclerView.ViewHolder {
 
 
-        private final TextView tvDescription,tvTitle;
+        private final TextView tvDescription,tvTitle,tvReal,tvFake,tvPending;
         ImageView ivScreenshot;
 
 
@@ -59,6 +75,9 @@ public class FakeHistoryAdapters extends RecyclerView.Adapter<FakeHistoryAdapter
             tvDescription = itemView.findViewById(R.id.tvDescription);
             tvTitle = itemView.findViewById(R.id.tvTitle);
             ivScreenshot=itemView.findViewById(R.id.ivScreenshot);
+            tvReal=itemView.findViewById(R.id.tvReal);
+            tvFake=itemView.findViewById(R.id.tvFake);
+            tvPending=itemView.findViewById(R.id.tvPending);
 
 
         }

@@ -37,7 +37,6 @@
                         android:layout_width="72dp"
                         android:layout_height="72dp"
                         android:layout_marginStart="@dimen/_15sdp"
-                        android:src="@drawable/app_logo"
                         android:layout_gravity="center_horizontal"/>
                     <TextView
                         android:id="@+id/tvName"

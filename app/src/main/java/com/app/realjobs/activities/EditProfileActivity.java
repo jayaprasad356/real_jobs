@@ -60,7 +60,7 @@ public class EditProfileActivity extends AppCompatActivity {
         params.put(Constant.EMAIL, binding.etEmail.getText().toString().trim());
         params.put(Constant.PLACE, binding.etPlaces.getText().toString().trim());
         params.put(Constant.SKILLS, binding.etSkills.getText().toString().trim());
-        params.put(Constant.WORKING_EXPERIENCE, binding.etSkills.getText().toString().trim());
+        params.put(Constant.WORKING_EXPERIENCE, binding.etWorkExperience.getText().toString().trim());
         params.put(Constant.PASSWORD, binding.etPassword.getText().toString().trim());
         ApiConfig.RequestToVolley((result, response) -> {
             Log.d("SIGNUP_RES", response);

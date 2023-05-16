@@ -14,8 +14,6 @@
         app:cardCornerRadius="@dimen/_10sdp">
 
 
-
-
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -57,8 +55,8 @@
                     android:text="Fiewin"
                     android:fontFamily="@font/opensans"
                     android:textColor="@color/white"
-                    android:layout_marginBottom="@dimen/_10sdp"
-                    android:textSize="@dimen/_18sdp"/>
+                    android:padding="@dimen/_5sdp"
+                    android:textSize="@dimen/_14sdp"/>
 
             </RelativeLayout>
 

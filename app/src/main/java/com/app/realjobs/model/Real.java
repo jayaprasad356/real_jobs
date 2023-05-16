@@ -3,16 +3,17 @@ package com.app.realjobs.model;
 import java.util.List;
 
 public class Real {
-    String id,company_name,title,income,description;
+    String id,company_name,title,income,description,image;
     List<RealJobVariant> real_jobs_variant;
 
-    public Real(String id, String company_name, String title, String income, String description, List<RealJobVariant> real_jobs_variant) {
+    public Real(String id, String company_name, String title, String income, String description,String image, List<RealJobVariant> real_jobs_variant) {
         this.id = id;
         this.company_name = company_name;
         this.title = title;
         this.income = income;
         this.description = description;
         this.real_jobs_variant = real_jobs_variant;
+        this.image=image;
     }
 
     public String getId() {
@@ -21,6 +22,14 @@ public class Real {
 
     public void setId(String id) {
         this.id = id;
+    }
+
+    public String getImage() {
+        return image;
+    }
+
+    public void setImage(String image) {
+        this.image = image;
     }
 
     public String getCompany_name() {

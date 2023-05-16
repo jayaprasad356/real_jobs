@@ -8,6 +8,7 @@ import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 
+import com.app.realjobs.fragment.CheckFakejobsFragment;
 import com.app.realjobs.helper.ApiConfig;
 import com.app.realjobs.helper.Constant;
 
@@ -41,6 +42,7 @@ public class HomeActivity extends AppCompatActivity implements NavigationBarView
     FakeFragment fakeFragment = new FakeFragment();
     ProfileFragment profileFragment = new ProfileFragment();
     PaymentFragment paymentFragment = new PaymentFragment();
+    CheckFakejobsFragment checkFakejobsFragment = new CheckFakejobsFragment();
 
 
     Activity activity;
@@ -77,6 +79,10 @@ profileList();
                     getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, realFragment).commit();
                 else
                     getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, paymentFragment).commit();
+                return true;
+
+            case R.id.nav_checkFake:
+                getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,checkFakejobsFragment ).commit();
                 return true;
 
             case R.id.nav_profile:
